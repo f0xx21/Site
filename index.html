@@ -393,6 +393,38 @@
         </article>
       </section>
     </div>
+
+    <aside class="weather-panel" aria-label="Прогноз погоды">
+      <div class="weather-card">
+        <h2 class="weather-heading">Погода</h2>
+        <div class="weather-city-row">
+          <label for="weatherCity">Город</label>
+          <select id="weatherCity" aria-describedby="weatherStatus">
+            <option value="rostov">Ростов-на-Дону</option>
+            <option value="kamenomostskiy">Каменомостский (Адыгея)</option>
+            <option value="sochi">Сочи</option>
+            <option value="krasnaya_polyana">Красная поляна</option>
+            <option value="london">Лондон</option>
+            <option value="newyork">Нью-Йорк</option>
+          </select>
+        </div>
+        <div class="weather-body" id="weatherBody" aria-live="polite">
+          <p class="weather-temp" id="weatherTemp">—</p>
+          <p class="weather-desc" id="weatherDesc">—</p>
+          <dl class="weather-details">
+            <div class="weather-detail">
+              <dt>Влажность</dt>
+              <dd id="weatherHumidity">—</dd>
+            </div>
+            <div class="weather-detail">
+              <dt>Ветер</dt>
+              <dd id="weatherWind">—</dd>
+            </div>
+          </dl>
+        </div>
+        <p id="weatherStatus" class="weather-status" role="status">Загрузка…</p>
+      </div>
+    </aside>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
@@ -400,5 +432,6 @@
   <script src="nav.js"></script>
   <script src="books.js"></script>
   <script src="app.js"></script>
+  <script src="weather.js"></script>
 </body>
 </html>

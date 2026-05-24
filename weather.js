@@ -5,6 +5,7 @@ const WEATHER_CACHE_TTL_MS = 30 * 60 * 1000;
 
 const CITIES = {
   rostov: { name: "Ростов-на-Дону", lat: 47.2357, lon: 39.7015 },
+  moscow: { name: "Москва", lat: 55.7558, lon: 37.6173 },
   kamenomostskiy: { name: "Каменомостский (Адыгея)", lat: 44.2936, lon: 40.1872 },
   sochi: { name: "Сочи", lat: 43.6028, lon: 39.7342 },
   krasnaya_polyana: { name: "Красная поляна", lat: 43.6786, lon: 40.2073 },

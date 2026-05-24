@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Конвертер валют</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="site-layout">
+    <aside class="sidebar" aria-label="Навигация по сайту">
+      <div class="sidebar-brand">
+        <span class="sidebar-logo">₽$€</span>
+        <span class="sidebar-title">Финансы</span>
+      </div>
+      <nav class="sidebar-nav">
+        <button
+          type="button"
+          class="nav-item is-active"
+          data-section="calculator"
+          aria-current="page"
+        >
+          Конвертер валют
+        </button>
+        <button
+          type="button"
+          class="nav-item"
+          data-section="articles"
+        >
+          Статьи
+        </button>
+      </nav>
+    </aside>
+
+    <div class="main-content">
+      <section
+        id="section-calculator"
+        class="page-section is-active"
+        aria-labelledby="calculatorHeading"
+      >
+        <main class="converter-card">
+          <header class="card-header">
+            <h1 id="calculatorHeading">Конвертер валют</h1>
+            <p class="subtitle">EUR · USD · RUB · CNY</p>
+          </header>
+
+          <section class="amount-section" aria-labelledby="amountLabel">
+            <label id="amountLabel" for="amount">Сумма</label>
+            <input
+              type="text"
+              id="amount"
+              inputmode="decimal"
+              placeholder="0"
+              autocomplete="off"
+              aria-describedby="statusText"
+            />
+          </section>
+
+          <section class="percent-section" aria-labelledby="percentLabel">
+            <label id="percentLabel" for="percent">Прибавить процент</label>
+            <div class="percent-input-wrap">
+              <input
+                type="text"
+                id="percent"
+                inputmode="decimal"
+                placeholder="0"
+                autocomplete="off"
+              />
+              <span class="percent-suffix" aria-hidden="true">%</span>
+            </div>
+          </section>
+
+          <section class="percent-total-section" aria-labelledby="percentTotalLabel">
+            <label id="percentTotalLabel" for="percentTotal">Сумма с процентом</label>
+            <output id="percentTotal" class="percent-result-block" for="amount percent" aria-live="polite">
+              <span class="percent-total-value">—</span>
+            </output>
+            <p id="percentDetail" class="percent-detail">—</p>
+          </section>
+
+          <section class="currency-row" aria-label="Выбор валют">
+            <div class="currency-field">
+              <label for="fromCurrency">Из</label>
+              <select id="fromCurrency" aria-label="Валюта источника">
+                <option value="USD">USD — Доллар США</option>
+                <option value="EUR">EUR — Евро</option>
+                <option value="RUB">RUB — Российский рубль</option>
+                <option value="CNY">CNY — Китайский юань</option>
+              </select>
+            </div>
+
+            <button type="button" id="swapBtn" class="swap-btn" aria-label="Поменять валюты">⇄</button>
+
+            <div class="currency-field">
+              <label for="toCurrency">В</label>
+              <select id="toCurrency" aria-label="Валюта назначения">
+                <option value="EUR">EUR — Евро</option>
+                <option value="USD">USD — Доллар США</option>
+                <option value="RUB">RUB — Российский рубль</option>
+                <option value="CNY">CNY — Китайский юань</option>
+              </select>
+            </div>
+          </section>
+
+          <section class="result-section" aria-labelledby="resultLabel">
+            <label id="resultLabel" for="result">Сумма без процента</label>
+            <output id="result" class="result-block" for="amount fromCurrency toCurrency" aria-live="polite">
+              <span class="result-value">—</span>
+            </output>
+          </section>
+
+          <p id="rateInfo" class="meta">—</p>
+          <p id="statusText" class="status" role="status" aria-live="polite">Загрузка курсов…</p>
+
+          <button type="button" id="refreshBtn" class="refresh-btn">Обновить курсы</button>
+        </main>
+      </section>
+
+      <section
+        id="section-articles"
+        class="page-section"
+        aria-labelledby="articlesHeading"
+        hidden
+      >
+        <article class="content-card content-card--wide">
+          <header class="card-header">
+            <h1 id="articlesHeading">Книги и Статьи</h1>
+            <p class="subtitle">Книги в формате PDF и EPUB</p>
+          </header>
+
+          <div class="articles-subsections" id="articlesSubsections">
+            <h2 class="subsections-heading">Подразделы</h2>
+            <ul class="subsections-list">
+              <li>
+                <button
+                  type="button"
+                  class="subsection-item"
+                  data-series="booksSeriesSociology"
+                  data-title="Основы социологии"
+                >
+                  <span class="subsection-item-title">Основы социологии</span>
+                  <span class="subsection-item-meta">ВП СССР · 6 томов · PDF</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="subsection-item"
+                  data-series="booksSeriesEthics"
+                  data-title="ВП СССР. Об этике и её роли в жизни"
+                >
+                  <span class="subsection-item-title">ВП СССР. Об этике и её роли в жизни</span>
+                  <span class="subsection-item-meta">ВП СССР · PDF</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="subsection-item"
+                  data-series="booksSeriesLove"
+                  data-title="5 языков любви"
+                >
+                  <span class="subsection-item-title">5 языков любви</span>
+                  <span class="subsection-item-meta">Гэри Чепмен · PDF</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="subsection-item"
+                  data-series="booksSeriesAlmazov"
+                  data-title="Про стёпу"
+                >
+                  <span class="subsection-item-title">Про стёпу</span>
+                  <span class="subsection-item-meta">ВП СССР · Алмазов · EPUB</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="subsection-item"
+                  data-series="booksSeriesDeniken"
+                  data-title="Эрих фон Дэникен"
+                >
+                  <span class="subsection-item-title">Эрих фон Дэникен</span>
+                  <span class="subsection-item-meta">4 книги · EPUB</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="books-series" id="booksSeriesSociology" hidden>
+            <button type="button" class="pdf-back-btn series-back-btn js-series-back">
+              ← К подразделам
+            </button>
+            <h2 class="books-series-title">Основы социологии</h2>
+            <p class="books-series-author">Величко</p>
+            <ul class="books-list">
+              <li>
+                <button type="button" class="book-item" data-pdf="books/tom-1.pdf" data-title="Основы социологии (том 1)">
+                  <span class="book-item-icon" aria-hidden="true">PDF</span>
+                  <span class="book-item-title">Основы социологии (том 1)</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="book-item" data-pdf="books/tom-2.pdf" data-title="Основы социологии (том 2)">
+                  <span class="book-item-icon" aria-hidden="true">PDF</span>
+                  <span class="book-item-title">Основы социологии (том 2)</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="book-item" data-pdf="books/tom-3.pdf" data-title="Основы социологии (том 3)">
+                  <span class="book-item-icon" aria-hidden="true">PDF</span>
+                  <span class="book-item-title">Основы социологии (том 3)</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="book-item" data-pdf="books/tom-4.pdf" data-title="Основы социологии (том 4)">
+                  <span class="book-item-icon" aria-hidden="true">PDF</span>
+                  <span class="book-item-title">Основы социологии (том 4)</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="book-item" data-pdf="books/tom-5.pdf" data-title="Основы социологии (том 5)">
+                  <span class="book-item-icon" aria-hidden="true">PDF</span>
+                  <span class="book-item-title">Основы социологии (том 5)</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="book-item" data-pdf="books/tom-6.pdf" data-title="Основы социологии (том 6)">
+                  <span class="book-item-icon" aria-hidden="true">PDF</span>
+                  <span class="book-item-title">Основы социологии (том 6)</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="books-series" id="booksSeriesEthics" hidden>
+            <button type="button" class="pdf-back-btn series-back-btn js-series-back">
+              ← К подразделам
+            </button>
+            <h2 class="books-series-title">ВП СССР. Об этике и её роли в жизни</h2>
+            <p class="books-series-author">Величко</p>
+            <ul class="books-list">
+              <li>
+                <button
+                  type="button"
+                  class="book-item"
+                  data-pdf="books/ethics.pdf"
+                  data-title="ВП СССР. Об этике и её роли в жизни"
+                >
+                  <span class="book-item-icon" aria-hidden="true">PDF</span>
+                  <span class="book-item-title">ВП СССР. Об этике и её роли в жизни</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="books-series" id="booksSeriesLove" hidden>
+            <button type="button" class="pdf-back-btn series-back-btn js-series-back">
+              ← К подразделам
+            </button>
+            <h2 class="books-series-title">5 языков любви</h2>
+            <p class="books-series-author">Гэри Чепмен</p>
+            <ul class="books-list">
+              <li>
+                <button
+                  type="button"
+                  class="book-item"
+                  data-pdf="books/5-yazikov-lubvi.pdf"
+                  data-title="5 языков любви"
+                >
+                  <span class="book-item-icon" aria-hidden="true">PDF</span>
+                  <span class="book-item-title">5 языков любви</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="books-series" id="booksSeriesAlmazov" hidden>
+            <button type="button" class="pdf-back-btn series-back-btn js-series-back">
+              ← К подразделам
+            </button>
+            <h2 class="books-series-title">Про стёпу</h2>
+            <p class="books-series-author">Сергей Алмазов · ВП СССР</p>
+            <ul class="books-list">
+              <li>
+                <button
+                  type="button"
+                  class="book-item"
+                  data-epub="books/almazov-pro-styopu.epub"
+                  data-title="Про стёпу"
+                >
+                  <span class="book-item-icon book-item-icon--epub" aria-hidden="true">EPUB</span>
+                  <span class="book-item-title">Про стёпу</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="books-series" id="booksSeriesDeniken" hidden>
+            <button type="button" class="pdf-back-btn series-back-btn js-series-back">
+              ← К подразделам
+            </button>
+            <h2 class="books-series-title">Эрих фон Дэникен</h2>
+            <p class="books-series-author">4 книги · EPUB</p>
+            <ul class="books-list">
+              <li>
+                <button type="button" class="book-item" data-epub="books/deniken-nebesnye-uchitelya.epub" data-title="Небесные учителя">
+                  <span class="book-item-icon book-item-icon--epub" aria-hidden="true">EPUB</span>
+                  <span class="book-item-title">Небесные учителя</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="book-item" data-epub="books/deniken-istoriya-oshibochna.epub" data-title="История ошибочна">
+                  <span class="book-item-icon book-item-icon--epub" aria-hidden="true">EPUB</span>
+                  <span class="book-item-title">История ошибочна</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="book-item" data-epub="books/deniken-poslaniya-znaki.epub" data-title="Послания и знаки из космоса">
+                  <span class="book-item-icon book-item-icon--epub" aria-hidden="true">EPUB</span>
+                  <span class="book-item-title">Послания и знаки из космоса</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="book-item" data-epub="books/deniken-risunki-naska.epub" data-title="Загадочные рисунки Наска">
+                  <span class="book-item-icon book-item-icon--epub" aria-hidden="true">EPUB</span>
+                  <span class="book-item-title">Загадочные рисунки Наска</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pdf-viewer is-hidden" id="pdfViewer" hidden>
+            <div class="pdf-viewer-toolbar">
+              <button type="button" id="pdfBackBtn" class="pdf-back-btn">← К томам</button>
+              <h2 id="pdfViewerTitle" class="pdf-viewer-title"></h2>
+              <a id="pdfOpenTab" class="pdf-open-tab" href="#" target="_blank" rel="noopener">Открыть в новой вкладке</a>
+            </div>
+            <iframe
+              id="pdfFrame"
+              class="pdf-frame"
+              title="Просмотр книги"
+            ></iframe>
+          </div>
+
+          <div class="epub-viewer is-hidden" id="epubViewer" hidden>
+            <div class="pdf-viewer-toolbar">
+              <button type="button" id="epubBackBtn" class="pdf-back-btn">← К книгам</button>
+              <h2 id="epubViewerTitle" class="pdf-viewer-title"></h2>
+              <div class="epub-nav-btns">
+                <button type="button" id="epubPrevBtn" class="epub-nav-btn" aria-label="Предыдущая страница">←</button>
+                <button type="button" id="epubNextBtn" class="epub-nav-btn" aria-label="Следующая страница">→</button>
+              </div>
+              <a id="epubOpenTab" class="pdf-open-tab" href="#" target="_blank" rel="noopener">Скачать EPUB</a>
+            </div>
+            <div id="epubArea" class="epub-area"></div>
+          </div>
+
+        </article>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/epubjs@0.3.93/dist/epub.min.js"></script>
+  <script src="nav.js"></script>
+  <script src="books.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

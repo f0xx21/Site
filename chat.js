@@ -429,8 +429,10 @@ function renderOnlineUsers() {
     item.className = "chat-online-user";
 
     const dot = document.createElement("span");
+    const color = getNicknameColor(nickname);
     dot.className = "chat-online-dot";
-    dot.style.backgroundColor = getNicknameColor(nickname);
+    dot.style.backgroundColor = color;
+    dot.style.color = color;
 
     const name = document.createElement("span");
     name.className = "chat-online-name";

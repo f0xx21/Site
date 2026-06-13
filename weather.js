@@ -1,16 +1,16 @@
-const WEATHER_API = "https://api.open-meteo.com/v1/forecast";
+const WEATHER_API = "https://wttr.in";
 const WEATHER_CACHE_KEY = "weatherForecastCache";
 const WEATHER_CITY_KEY = "weatherSelectedCity";
 const WEATHER_CACHE_TTL_MS = 30 * 60 * 1000;
 
 const CITIES = {
-  rostov: { name: "Ростов-на-Дону", lat: 47.2357, lon: 39.7015 },
-  moscow: { name: "Москва", lat: 55.7558, lon: 37.6173 },
-  kamenomostskiy: { name: "Каменомостский (Адыгея)", lat: 44.2936, lon: 40.1872 },
-  sochi: { name: "Сочи", lat: 43.6028, lon: 39.7342 },
-  krasnaya_polyana: { name: "Красная поляна", lat: 43.6786, lon: 40.2073 },
-  london: { name: "Лондон", lat: 51.5074, lon: -0.1278 },
-  newyork: { name: "Нью-Йорк", lat: 40.7128, lon: -74.006 },
+  rostov: { name: "Ростов-на-Дону", wttrLocation: "Rostov-on-Don" },
+  moscow: { name: "Москва", wttrLocation: "Moscow" },
+  kamenomostskiy: { name: "Каменомостский (Адыгея)", wttrLocation: "Kamennomostskiy,Adygea" },
+  sochi: { name: "Сочи", wttrLocation: "Sochi" },
+  krasnaya_polyana: { name: "Красная поляна", wttrLocation: "Krasnaya Polyana,Russia" },
+  london: { name: "Лондон", wttrLocation: "London" },
+  newyork: { name: "Нью-Йорк", wttrLocation: "New York" },
 };
 
 const weatherCitySelect = document.getElementById("weatherCity");
@@ -25,43 +25,10 @@ function setWeatherStatus(message, type = "") {
   weatherStatusEl.className = "weather-status" + (type ? ` ${type}` : "");
 }
 
-function describeWeatherCode(code) {
-  const map = {
-    0: "Ясно",
-    1: "Преимущественно ясно",
-    2: "Переменная облачность",
-    3: "Пасмурно",
-    45: "Туман",
-    48: "Изморозь",
-    51: "Морось",
-    53: "Морось",
-    55: "Сильная морось",
-    56: "Ледяная морось",
-    57: "Ледяная морось",
-    61: "Небольшой дождь",
-    63: "Дождь",
-    65: "Сильный дождь",
-    66: "Ледяной дождь",
-    67: "Ледяной дождь",
-    71: "Небольшой снег",
-    73: "Снег",
-    75: "Сильный снег",
-    77: "Снежная крупа",
-    80: "Ливень",
-    81: "Ливень",
-    82: "Сильный ливень",
-    85: "Снегопад",
-    86: "Сильный снегопад",
-    95: "Гроза",
-    96: "Гроза с градом",
-    99: "Гроза с градом",
-  };
-  return map[code] ?? "—";
-}
-
-function formatWindSpeed(ms) {
-  if (ms == null || !Number.isFinite(ms)) return "—";
-  return `${Math.round(ms)} м/с`;
+function formatWindSpeed(kmh) {
+  const num = Number(kmh);
+  if (!Number.isFinite(num)) return "—";
+  return `${Math.round(num / 3.6)} м/с`;
 }
 
 function readWeatherCache(cityId) {
@@ -85,29 +52,17 @@ function writeWeatherCache(cityId, data) {
 }
 
 function renderWeather(data, cityName) {
-  const temp = data.temperature;
-  const rounded =
-    temp != null && Number.isFinite(temp) ? Math.round(temp) : null;
+  const temp = Number(data.temperature);
+  const rounded = Number.isFinite(temp) ? Math.round(temp) : null;
 
-  weatherTempEl.textContent =
-    rounded != null ? `${rounded} °C` : "—";
-  weatherDescEl.textContent = describeWeatherCode(data.weatherCode);
+  weatherTempEl.textContent = rounded != null ? `${rounded} °C` : "—";
+  weatherDescEl.textContent = data.description || "—";
   weatherHumidityEl.textContent =
     data.humidity != null ? `${Math.round(data.humidity)} %` : "—";
-  weatherWindEl.textContent = formatWindSpeed(data.windSpeed);
+  weatherWindEl.textContent = formatWindSpeed(data.windSpeedKmh);
 
   if (data.time) {
-    try {
-      const timeLabel = new Date(data.time).toLocaleString("ru-RU", {
-        day: "numeric",
-        month: "short",
-        hour: "2-digit",
-        minute: "2-digit",
-      });
-      setWeatherStatus(`${cityName} · ${timeLabel}`);
-    } catch {
-      setWeatherStatus(cityName);
-    }
+    setWeatherStatus(`${cityName} · ${data.time}`);
   } else {
     setWeatherStatus(cityName);
   }
@@ -117,30 +72,32 @@ async function fetchWeather(cityId) {
   const city = CITIES[cityId];
   if (!city) throw new Error("Неизвестный город");
 
-  const params = new URLSearchParams({
-    latitude: String(city.lat),
-    longitude: String(city.lon),
-    current: "temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m",
-    temperature_unit: "celsius",
-    wind_speed_unit: "ms",
-    timezone: "auto",
+  const location = encodeURIComponent(city.wttrLocation);
+  const url = `${WEATHER_API}/${location}?format=j1&lang=ru`;
+
+  const response = await fetch(url, {
+    headers: { Accept: "application/json" },
   });
 
-  const response = await fetch(`${WEATHER_API}?${params}`);
   if (!response.ok) {
     throw new Error(`Ошибка API: ${response.status}`);
   }
 
   const json = await response.json();
-  const current = json.current;
+  const current = json.current_condition?.[0];
   if (!current) throw new Error("Нет данных о погоде");
 
+  const description =
+    current.lang_ru?.[0]?.value ||
+    current.weatherDesc?.[0]?.value ||
+    "—";
+
   return {
-    temperature: current.temperature_2m,
-    humidity: current.relative_humidity_2m,
-    weatherCode: current.weather_code,
-    windSpeed: current.wind_speed_10m,
-    time: current.time,
+    temperature: current.temp_C,
+    humidity: current.humidity,
+    description,
+    windSpeedKmh: current.windspeedKmph,
+    time: current.observation_time,
   };
 }
 

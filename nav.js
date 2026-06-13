@@ -21,10 +21,16 @@ function showSection(sectionId) {
   document.title =
     sectionId === "articles"
       ? "Книги и статьи — Финансы"
-      : "Калькулятор — Конвертер валют";
+      : sectionId === "chat"
+        ? "Чат — Финансы"
+        : "Калькулятор — Конвертер валют";
 
   if (sectionId === "articles" && typeof window.resetBooksView === "function") {
     window.resetBooksView();
+  }
+
+  if (sectionId === "chat" && typeof window.initChat === "function") {
+    window.initChat();
   }
 }
 

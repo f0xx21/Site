@@ -35,7 +35,7 @@
           class="nav-item"
           data-section="chat"
         >
-          Чат
+          Chat
         </button>
       </nav>
     </aside>
@@ -408,9 +408,22 @@
       >
         <main class="content-card content-card--wide chat-card">
           <header class="card-header">
-            <h1 id="chatHeading">Чат</h1>
-            <p class="subtitle">Анонимный общий чат</p>
+            <h1 id="chatHeading">Chat</h1>
+            <p class="subtitle">Public chat with nicknames</p>
           </header>
+
+          <div class="chat-nickname-row">
+            <label for="chatNickname">Nickname</label>
+            <input
+              type="text"
+              id="chatNickname"
+              class="chat-nickname-input"
+              maxlength="24"
+              placeholder="What should we call you?"
+              autocomplete="nickname"
+              aria-describedby="chatStatus"
+            />
+          </div>
 
           <div
             id="chatMessages"
@@ -418,7 +431,7 @@
             role="log"
             aria-live="polite"
             aria-relevant="additions"
-            aria-label="Сообщения чата"
+            aria-label="Chat messages"
           ></div>
 
           <div class="chat-input-row">
@@ -427,16 +440,16 @@
               class="chat-input"
               rows="2"
               maxlength="500"
-              placeholder="Напишите сообщение…"
-              aria-label="Сообщение"
+              placeholder="Write a message…"
+              aria-label="Message"
               aria-describedby="chatStatus"
             ></textarea>
             <button type="button" id="chatSendBtn" class="chat-send-btn">
-              Отправить
+              Send
             </button>
           </div>
 
-          <p id="chatStatus" class="chat-status" role="status">Подключение…</p>
+          <p id="chatStatus" class="chat-status" role="status">Connecting…</p>
         </main>
       </section>
     </div>

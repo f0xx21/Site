@@ -1,5 +1,7 @@
 const CHAT_MESSAGE_LIMIT = 50;
 const CHAT_MAX_TEXT_LENGTH = 500;
+const CHAT_MAX_NICKNAME_LENGTH = 24;
+const CHAT_NICKNAME_KEY = "chatNickname";
 
 let supabaseClient = null;
 let chatChannel = null;
@@ -7,6 +9,7 @@ let chatInitialized = false;
 let knownMessageIds = new Set();
 
 const chatMessagesEl = document.getElementById("chatMessages");
+const chatNicknameEl = document.getElementById("chatNickname");
 const chatInputEl = document.getElementById("chatInput");
 const chatSendBtn = document.getElementById("chatSendBtn");
 const chatStatusEl = document.getElementById("chatStatus");
@@ -17,9 +20,32 @@ function setChatStatus(message, type = "") {
   chatStatusEl.className = "chat-status" + (type ? ` ${type}` : "");
 }
 
+function getChatErrorMessage(error) {
+  if (location.protocol === "file:") {
+    return "Chat does not work via file:// — run start-server.bat and open http://localhost:3000";
+  }
+
+  const message = String(error?.message ?? error ?? "");
+  const code = String(error?.code ?? "");
+
+  if (message.includes("nickname") || code === "42703") {
+    return "Run supabase-migration-nicknames.sql in the Supabase SQL Editor";
+  }
+
+  if (
+    message.includes("Failed to fetch") ||
+    message.includes("NetworkError") ||
+    message.includes("Load failed")
+  ) {
+    return "Cannot reach Supabase — check your connection or open http://localhost:3000";
+  }
+
+  return "Failed to connect to chat";
+}
+
 function formatMessageTime(isoString) {
   try {
-    return new Date(isoString).toLocaleString("ru-RU", {
+    return new Date(isoString).toLocaleString("en-US", {
       day: "numeric",
       month: "short",
       hour: "2-digit",
@@ -27,6 +53,35 @@ function formatMessageTime(isoString) {
     });
   } catch {
     return "";
+  }
+}
+
+function displayNickname(value) {
+  const nickname = normalizeNickname(value);
+  if (!nickname || nickname === "Гость") return "Guest";
+  return nickname;
+}
+
+function normalizeNickname(value) {
+  return String(value ?? "").trim().slice(0, CHAT_MAX_NICKNAME_LENGTH);
+}
+
+function getNickname() {
+  return normalizeNickname(chatNicknameEl?.value);
+}
+
+function saveNickname() {
+  const nickname = getNickname();
+  if (nickname) {
+    localStorage.setItem(CHAT_NICKNAME_KEY, nickname);
+  }
+}
+
+function loadSavedNickname() {
+  if (!chatNicknameEl) return;
+  const saved = localStorage.getItem(CHAT_NICKNAME_KEY);
+  if (saved) {
+    chatNicknameEl.value = normalizeNickname(saved);
   }
 }
 
@@ -40,17 +95,27 @@ function createMessageElement(message) {
   item.className = "chat-message";
   item.dataset.messageId = String(message.id);
 
-  const textEl = document.createElement("p");
-  textEl.className = "chat-message-text";
-  textEl.textContent = message.text;
+  const headerEl = document.createElement("div");
+  headerEl.className = "chat-message-header";
+
+  const nicknameEl = document.createElement("span");
+  nicknameEl.className = "chat-message-nickname";
+  nicknameEl.textContent = displayNickname(message.nickname);
 
   const timeEl = document.createElement("time");
   timeEl.className = "chat-message-time";
   timeEl.dateTime = message.created_at;
   timeEl.textContent = formatMessageTime(message.created_at);
 
+  headerEl.appendChild(nicknameEl);
+  headerEl.appendChild(timeEl);
+
+  const textEl = document.createElement("p");
+  textEl.className = "chat-message-text";
+  textEl.textContent = message.text;
+
+  item.appendChild(headerEl);
   item.appendChild(textEl);
-  item.appendChild(timeEl);
   return item;
 }
 
@@ -85,11 +150,11 @@ function getSupabaseClient() {
   if (supabaseClient) return supabaseClient;
 
   if (!window.supabase?.createClient) {
-    throw new Error("Supabase SDK не загружен");
+    throw new Error("Supabase SDK not loaded");
   }
 
   if (!isChatConfigured()) {
-    throw new Error("Не настроен config.js");
+    throw new Error("config.js is not configured");
   }
 
   supabaseClient = window.supabase.createClient(
@@ -103,7 +168,7 @@ function getSupabaseClient() {
 async function loadRecentMessages(client) {
   const { data, error } = await client
     .from("messages")
-    .select("id, text, created_at")
+    .select("id, nickname, text, created_at")
     .order("created_at", { ascending: false })
     .limit(CHAT_MESSAGE_LIMIT);
 
@@ -133,11 +198,11 @@ function subscribeToMessages(client) {
     )
     .subscribe((status) => {
       if (status === "SUBSCRIBED") {
-        setChatStatus("Онлайн");
+        setChatStatus("Online");
       } else if (status === "CHANNEL_ERROR") {
-        setChatStatus("Ошибка подключения", "error");
+        setChatStatus("Connection error", "error");
       } else if (status === "TIMED_OUT") {
-        setChatStatus("Таймаут подключения", "error");
+        setChatStatus("Connection timed out", "error");
       }
     });
 }
@@ -145,27 +210,35 @@ function subscribeToMessages(client) {
 async function sendMessage() {
   if (!chatInputEl || !chatSendBtn) return;
 
+  const nickname = getNickname();
+  if (!nickname) {
+    setChatStatus("Enter a nickname before sending", "error");
+    chatNicknameEl?.focus();
+    return;
+  }
+
   const text = chatInputEl.value.trim();
   if (!text) return;
 
   if (text.length > CHAT_MAX_TEXT_LENGTH) {
-    setChatStatus(`Сообщение не длиннее ${CHAT_MAX_TEXT_LENGTH} символов`, "error");
+    setChatStatus(`Message must be ${CHAT_MAX_TEXT_LENGTH} characters or less`, "error");
     return;
   }
 
+  saveNickname();
   chatSendBtn.disabled = true;
-  setChatStatus("Отправка…", "loading");
+  setChatStatus("Sending…", "loading");
 
   try {
     const client = getSupabaseClient();
-    const { error } = await client.from("messages").insert({ text });
+    const { error } = await client.from("messages").insert({ nickname, text });
 
     if (error) throw error;
 
     chatInputEl.value = "";
-    setChatStatus("Онлайн");
-  } catch {
-    setChatStatus("Не удалось отправить сообщение", "error");
+    setChatStatus("Online");
+  } catch (error) {
+    setChatStatus(getChatErrorMessage(error), "error");
   } finally {
     chatSendBtn.disabled = false;
     chatInputEl.focus();
@@ -183,35 +256,50 @@ function bindChatEvents() {
       sendMessage();
     }
   });
+
+  chatNicknameEl?.addEventListener("change", saveNickname);
+  chatNicknameEl?.addEventListener("blur", saveNickname);
 }
 
 async function initChat() {
   if (chatInitialized) return;
   if (!chatMessagesEl) return;
 
+  loadSavedNickname();
   bindChatEvents();
   chatInitialized = true;
 
   if (!isChatConfigured()) {
     setChatStatus(
-      "Не найден config.js на сервере — добавьте файл с ключами Supabase в репозиторий",
+      "config.js not found — add Supabase keys to the repository",
       "error"
     );
     chatSendBtn.disabled = true;
     chatInputEl.disabled = true;
+    if (chatNicknameEl) chatNicknameEl.disabled = true;
     return;
   }
 
-  setChatStatus("Подключение…", "loading");
+  if (location.protocol === "file:") {
+    setChatStatus(getChatErrorMessage({}), "error");
+    chatSendBtn.disabled = true;
+    chatInputEl.disabled = true;
+    if (chatNicknameEl) chatNicknameEl.disabled = true;
+    return;
+  }
+
+  setChatStatus("Connecting…", "loading");
 
   try {
     const client = getSupabaseClient();
     await loadRecentMessages(client);
     subscribeToMessages(client);
-  } catch {
-    setChatStatus("Не удалось подключиться к чату", "error");
+  } catch (error) {
+    console.error("Chat init error:", error);
+    setChatStatus(getChatErrorMessage(error), "error");
     chatSendBtn.disabled = true;
     chatInputEl.disabled = true;
+    if (chatNicknameEl) chatNicknameEl.disabled = true;
   }
 }
 

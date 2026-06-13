@@ -4,15 +4,16 @@
 
 ## Запуск
 
-1. Откройте файл `index.html` в браузере или запустите **`start-server.bat`** и откройте http://localhost:3000.
-2. При первом запуске нужен интернет для загрузки курсов и погоды.
-3. Курсы кэшируются в браузере на 1 час.
+1. Для **чата** и EPUB запустите **`start-server.bat`** и откройте http://localhost:3000 — через двойной клик по `index.html` (`file://`) чат не работает.
+2. Калькулятор можно открыть и через `index.html`, но для всех разделов лучше локальный сервер.
+3. При первом запуске нужен интернет для курсов, погоды и чата.
+4. Курсы кэшируются в браузере на 1 час.
 
 ## Разделы
 
 - **Калькулятор** — конвертер валют и расчёт суммы с процентом
 - **Статьи** — подразделы с книгами в PDF и EPUB, просмотр внутри сайта
-- **Чат** — анонимный общий чат в реальном времени (Supabase)
+- **Чат** — общий чат с никнеймами в реальном времени (Supabase)
 
 ## Настройка чата (Supabase)
 
@@ -28,6 +29,7 @@
 ```sql
 create table public.messages (
   id bigint generated always as identity primary key,
+  nickname text not null default 'Гость' check (char_length(nickname) between 1 and 24),
   text text not null check (char_length(text) between 1 and 500),
   created_at timestamptz not null default now()
 );
@@ -41,6 +43,14 @@ create policy "Anyone can send messages"
   on public.messages for insert with check (true);
 
 alter publication supabase_realtime add table public.messages;
+```
+
+**Если чат уже был настроен раньше**, выполните миграцию из [`supabase-migration-nicknames.sql`](supabase-migration-nicknames.sql):
+
+```sql
+alter table public.messages
+  add column if not exists nickname text not null default 'Гость'
+  check (char_length(nickname) between 1 and 24);
 ```
 
 5. В **Project Settings → API Keys** скопируйте:

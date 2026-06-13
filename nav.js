@@ -22,7 +22,7 @@ function showSection(sectionId) {
     sectionId === "articles"
       ? "Книги и статьи — Финансы"
       : sectionId === "chat"
-        ? "Чат — Финансы"
+        ? "Chat"
         : "Калькулятор — Конвертер валют";
 
   if (sectionId === "articles" && typeof window.resetBooksView === "function") {

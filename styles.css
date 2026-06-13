@@ -737,6 +737,49 @@ body {
   min-height: 70vh;
 }
 
+.chat-nickname-row {
+  margin-bottom: 1rem;
+}
+
+.chat-nickname-row label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.chat-nickname-input {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  font-size: 0.9375rem;
+  font-family: inherit;
+  background: var(--input-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  color-scheme: dark;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.chat-nickname-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.chat-nickname-input:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+.chat-nickname-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .chat-messages {
   flex: 1;
   min-height: 320px;
@@ -759,6 +802,21 @@ body {
   border-radius: var(--radius-sm);
 }
 
+.chat-message-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.chat-message-nickname {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--accent-hover);
+  word-break: break-word;
+}
+
 .chat-message-text {
   font-size: 0.9375rem;
   line-height: 1.45;
@@ -767,8 +825,7 @@ body {
 }
 
 .chat-message-time {
-  display: block;
-  margin-top: 0.35rem;
+  flex-shrink: 0;
   font-size: 0.75rem;
   color: var(--text-secondary);
 }

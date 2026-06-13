@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Конвертер валют</title>
   <link rel="icon" href="favicon.png" type="image/png" />
-  <link rel="stylesheet" href="styles.css?v=21" />
+  <link rel="stylesheet" href="styles.css?v=22" />
 </head>
 <body>
   <div class="site-layout">
@@ -434,11 +434,15 @@
       <section
         id="section-chat"
         class="page-section"
-        aria-labelledby="chatHeading"
+        aria-labelledby="chatSubtitle"
         hidden
       >
         <main class="content-card content-card--wide chat-card">
-          <header class="card-header card-header--chat">
+          <div class="chat-intro">
+            <header class="card-header card-header--chat">
+              <p id="chatSubtitle" class="subtitle">Public chat</p>
+            </header>
+
             <aside class="chat-online-panel" aria-labelledby="chatOnlineHeading">
               <h2 id="chatOnlineHeading" class="chat-online-heading">
                 Online
@@ -447,22 +451,20 @@
               <ul id="chatOnlineList" class="chat-online-list" aria-live="polite"></ul>
               <p id="chatOnlineEmpty" class="chat-online-empty">No one online yet</p>
             </aside>
-            <h1 id="chatHeading">Chat</h1>
-            <p class="subtitle">Public chat</p>
-          </header>
 
-          <section class="chat-nickname-section" aria-labelledby="chatNicknameLabel">
-            <label id="chatNicknameLabel" for="chatNickname">Nickname</label>
-            <input
-              type="text"
-              id="chatNickname"
-              class="chat-nickname-input"
-              maxlength="24"
-              placeholder="What should we call you?"
-              autocomplete="nickname"
-              aria-describedby="chatStatus"
-            />
-          </section>
+            <section class="chat-nickname-section" aria-labelledby="chatNicknameLabel">
+              <label id="chatNicknameLabel" for="chatNickname">Nickname</label>
+              <input
+                type="text"
+                id="chatNickname"
+                class="chat-nickname-input"
+                maxlength="24"
+                placeholder="What should we call you?"
+                autocomplete="nickname"
+                aria-describedby="chatStatus"
+              />
+            </section>
+          </div>
 
           <div class="chat-layout">
             <div class="chat-main">

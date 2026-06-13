@@ -768,8 +768,12 @@ body {
   max-height: calc(100dvh - 4rem);
 }
 
-.chat-card > .card-header,
-.chat-card > .chat-nickname-section {
+.chat-card > .chat-intro {
+  flex-shrink: 0;
+}
+
+.chat-intro {
+  position: relative;
   flex-shrink: 0;
 }
 
@@ -832,11 +836,15 @@ body {
 }
 
 .card-header--chat {
-  position: relative;
   padding-top: 0.125rem;
+  margin-bottom: 0.75rem;
 }
 
-.card-header--chat .chat-online-panel {
+.card-header--chat .subtitle {
+  padding-right: calc(9.5rem + 0.5rem);
+}
+
+.chat-intro .chat-online-panel {
   top: 0;
   right: 0;
 }
@@ -1345,16 +1353,13 @@ body {
   }
 
   .chat-card > .card-header--chat {
-    margin-bottom: 0.625rem;
-  }
-
-  .chat-card > .card-header--chat h1 {
-    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
   }
 
   .chat-card > .card-header--chat .subtitle {
-    font-size: 0.8125rem;
-    margin-top: 0.2rem;
+    font-size: 0.9375rem;
+    margin-top: 0;
+    padding-right: calc(5.75rem + 0.375rem);
   }
 
   .chat-nickname-section {
@@ -1386,7 +1391,6 @@ body {
 
   .card-header--chat {
     min-height: auto;
-    padding-right: 5.75rem;
   }
 
   .chat-online-panel {

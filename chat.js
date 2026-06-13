@@ -98,6 +98,22 @@ function getNicknameColor(nickname) {
   return NICKNAME_COLORS[hash % NICKNAME_COLORS.length];
 }
 
+function hexToRgba(hex, alpha) {
+  const value = hex.replace("#", "");
+  const r = parseInt(value.slice(0, 2), 16);
+  const g = parseInt(value.slice(2, 4), 16);
+  const b = parseInt(value.slice(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+function applyNicknameColors(nicknameEl, avatarEl, nickname) {
+  const color = getNicknameColor(nickname);
+  nicknameEl.style.color = color;
+  avatarEl.style.color = color;
+  avatarEl.style.backgroundColor = hexToRgba(color, 0.22);
+  avatarEl.style.borderColor = hexToRgba(color, 0.5);
+}
+
 function normalizeNickname(value) {
   return String(value ?? "").trim().slice(0, CHAT_MAX_NICKNAME_LENGTH);
 }
@@ -132,7 +148,6 @@ function createMessageElement(message) {
   const item = document.createElement("article");
   item.className = "chat-message";
   item.dataset.messageId = String(message.id);
-  item.style.setProperty("--nick-color", getNicknameColor(message.nickname));
 
   const avatarEl = document.createElement("div");
   avatarEl.className = "chat-message-avatar";
@@ -148,6 +163,8 @@ function createMessageElement(message) {
   const nicknameEl = document.createElement("strong");
   nicknameEl.className = "chat-message-nickname";
   nicknameEl.textContent = nickname;
+
+  applyNicknameColors(nicknameEl, avatarEl, message.nickname);
 
   const timeEl = document.createElement("time");
   timeEl.className = "chat-message-time";

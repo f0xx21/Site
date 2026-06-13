@@ -494,7 +494,7 @@ async function bootstrapChatConnection() {
             if (nicknameColumnSupported === false) {
               setChatStatus("Run supabase-migration-nicknames.sql to save nicknames", "error");
             } else {
-              setChatStatus("Online");
+              setChatStatus("Online", "online");
             }
           }
         } else if (status === "CHANNEL_ERROR" && chatInitialized) {
@@ -553,7 +553,7 @@ async function sendMessage() {
     }
 
     chatInputEl.value = "";
-    setChatStatus(hasNickname ? "Online" : "Run supabase-migration-nicknames.sql to save nicknames", hasNickname ? "" : "error");
+    setChatStatus(hasNickname ? "Online" : "Run supabase-migration-nicknames.sql to save nicknames", hasNickname ? "online" : "error");
   } catch (error) {
     setChatStatus(getChatErrorMessage(error), "error");
   } finally {
@@ -628,7 +628,7 @@ async function initChat() {
     await syncPresence();
 
     if (chatChannel && nicknameColumnSupported !== false) {
-      setChatStatus("Online");
+      setChatStatus("Online", "online");
     }
   } catch (error) {
     console.error("Chat init error:", error);

@@ -62,6 +62,12 @@ function displayNickname(value) {
   return nickname;
 }
 
+function getNicknameInitial(nickname) {
+  const name = displayNickname(nickname);
+  const letter = name.charAt(0).toUpperCase();
+  return letter || "?";
+}
+
 function normalizeNickname(value) {
   return String(value ?? "").trim().slice(0, CHAT_MAX_NICKNAME_LENGTH);
 }
@@ -91,9 +97,17 @@ function scrollChatToBottom() {
 }
 
 function createMessageElement(message) {
-  const item = document.createElement("div");
+  const item = document.createElement("article");
   item.className = "chat-message";
   item.dataset.messageId = String(message.id);
+
+  const avatarEl = document.createElement("div");
+  avatarEl.className = "chat-message-avatar";
+  avatarEl.setAttribute("aria-hidden", "true");
+  avatarEl.textContent = getNicknameInitial(message.nickname);
+
+  const bodyEl = document.createElement("div");
+  bodyEl.className = "chat-message-body";
 
   const headerEl = document.createElement("div");
   headerEl.className = "chat-message-header";
@@ -114,8 +128,11 @@ function createMessageElement(message) {
   textEl.className = "chat-message-text";
   textEl.textContent = message.text;
 
-  item.appendChild(headerEl);
-  item.appendChild(textEl);
+  bodyEl.appendChild(headerEl);
+  bodyEl.appendChild(textEl);
+
+  item.appendChild(avatarEl);
+  item.appendChild(bodyEl);
   return item;
 }
 

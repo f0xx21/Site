@@ -409,11 +409,11 @@
         <main class="content-card content-card--wide chat-card">
           <header class="card-header">
             <h1 id="chatHeading">Chat</h1>
-            <p class="subtitle">Public chat with nicknames</p>
+            <p class="subtitle">Public chat</p>
           </header>
 
-          <div class="chat-nickname-row">
-            <label for="chatNickname">Nickname</label>
+          <section class="chat-nickname-section" aria-labelledby="chatNicknameLabel">
+            <label id="chatNicknameLabel" for="chatNickname">Nickname</label>
             <input
               type="text"
               id="chatNickname"
@@ -423,7 +423,7 @@
               autocomplete="nickname"
               aria-describedby="chatStatus"
             />
-          </div>
+          </section>
 
           <div
             id="chatMessages"

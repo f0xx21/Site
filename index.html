@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Конвертер валют</title>
   <link rel="icon" href="favicon.png" type="image/png" />
-  <link rel="stylesheet" href="styles.css?v=14" />
+  <link rel="stylesheet" href="styles.css?v=15" />
 </head>
 <body>
   <div class="site-layout">
@@ -463,6 +463,15 @@
           </div>
 
           <div class="chat-layout">
+            <aside class="chat-online-panel" aria-labelledby="chatOnlineHeading">
+              <h2 id="chatOnlineHeading" class="chat-online-heading">
+                Online
+                <span id="chatOnlineCount" class="chat-online-count">0</span>
+              </h2>
+              <ul id="chatOnlineList" class="chat-online-list" aria-live="polite"></ul>
+              <p id="chatOnlineEmpty" class="chat-online-empty">No one online yet</p>
+            </aside>
+
             <div class="chat-main">
               <div
                 id="chatMessages"
@@ -490,15 +499,6 @@
 
               <p id="chatStatus" class="chat-status" role="status">Connecting…</p>
             </div>
-
-            <aside class="chat-online-panel" aria-labelledby="chatOnlineHeading">
-              <h2 id="chatOnlineHeading" class="chat-online-heading">
-                Online
-                <span id="chatOnlineCount" class="chat-online-count">0</span>
-              </h2>
-              <ul id="chatOnlineList" class="chat-online-list" aria-live="polite"></ul>
-              <p id="chatOnlineEmpty" class="chat-online-empty">No one online yet</p>
-            </aside>
           </div>
         </main>
       </section>

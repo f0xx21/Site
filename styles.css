@@ -808,7 +808,6 @@ body {
   background: rgba(15, 20, 25, 0.92);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-sm);
-  box-shadow: var(--shadow);
   backdrop-filter: blur(8px);
   color: var(--text-primary);
   color-scheme: dark;
@@ -833,7 +832,7 @@ body {
 #chatNickname:focus-visible,
 .chat-nickname-input:focus-visible {
   border-color: var(--accent);
-  box-shadow: var(--shadow), 0 0 0 3px rgba(59, 130, 246, 0.25);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
 }
 
 #chatNickname:disabled,
@@ -885,7 +884,6 @@ body {
   background: rgba(15, 20, 25, 0.92);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-sm);
-  box-shadow: var(--shadow);
   backdrop-filter: blur(8px);
   overflow: hidden;
 }

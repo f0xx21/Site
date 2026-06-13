@@ -2,7 +2,6 @@ const CHAT_MESSAGE_LIMIT = 50;
 const CHAT_MAX_TEXT_LENGTH = 500;
 const CHAT_MAX_NICKNAME_LENGTH = 24;
 const CHAT_NICKNAME_KEY = "chatNickname";
-const CHAT_NOTIFICATIONS_KEY = "chatNotificationsEnabled";
 const CHAT_PRESENCE_SESSION_KEY = "chatPresenceSessionId";
 
 const NICKNAME_COLORS = [
@@ -33,7 +32,6 @@ const chatNicknameEl = document.getElementById("chatNickname");
 const chatInputEl = document.getElementById("chatInput");
 const chatSendBtn = document.getElementById("chatSendBtn");
 const chatStatusEl = document.getElementById("chatStatus");
-const chatNotifyBtn = document.getElementById("chatNotifyBtn");
 const chatOnlineListEl = document.getElementById("chatOnlineList");
 const chatOnlineCountEl = document.getElementById("chatOnlineCount");
 const chatOnlineEmptyEl = document.getElementById("chatOnlineEmpty");
@@ -291,108 +289,10 @@ async function loadRecentMessages(client) {
   }
 }
 
-function notificationsSupported() {
-  return "Notification" in window;
-}
-
-function notificationsEnabled() {
-  return (
-    notificationsSupported() &&
-    Notification.permission === "granted" &&
-    localStorage.getItem(CHAT_NOTIFICATIONS_KEY) === "true"
-  );
-}
-
-function isChatSectionActive() {
-  return document.getElementById("section-chat")?.classList.contains("is-active");
-}
-
-function updateNotifyButton() {
-  if (!chatNotifyBtn) return;
-
-  if (!notificationsSupported()) {
-    chatNotifyBtn.hidden = true;
-    return;
-  }
-
-  chatNotifyBtn.hidden = false;
-  chatNotifyBtn.classList.remove("is-active");
-  chatNotifyBtn.disabled = false;
-
-  if (Notification.permission === "granted" && localStorage.getItem(CHAT_NOTIFICATIONS_KEY) === "true") {
-    chatNotifyBtn.textContent = "Notifications on";
-    chatNotifyBtn.classList.add("is-active");
-    return;
-  }
-
-  if (Notification.permission === "denied") {
-    chatNotifyBtn.textContent = "Notifications blocked in browser";
-    chatNotifyBtn.disabled = true;
-    return;
-  }
-
-  chatNotifyBtn.textContent = "Enable notifications";
-}
-
-async function requestNotificationPermission() {
-  if (!notificationsSupported()) return;
-
-  if (Notification.permission === "granted") {
-    localStorage.setItem(CHAT_NOTIFICATIONS_KEY, "true");
-    updateNotifyButton();
-    return;
-  }
-
-  if (Notification.permission === "denied") {
-    updateNotifyButton();
-    return;
-  }
-
-  const result = await Notification.requestPermission();
-  if (result === "granted") {
-    localStorage.setItem(CHAT_NOTIFICATIONS_KEY, "true");
-  } else {
-    localStorage.setItem(CHAT_NOTIFICATIONS_KEY, "false");
-  }
-
-  updateNotifyButton();
-}
-
-function shouldNotifyForMessage(message) {
-  if (!notificationsEnabled()) return false;
-
-  const author = displayNickname(message.nickname).toLowerCase();
-  const self = getNickname().toLowerCase();
-  if (author && self && author === self) return false;
-
-  return document.hidden || !isChatSectionActive();
-}
-
-function showMessageNotification(message) {
-  if (!shouldNotifyForMessage(message)) return;
-
-  const nickname = displayNickname(message.nickname);
-  const body = String(message.text ?? "").trim().slice(0, 120);
-
-  const notification = new Notification(`${nickname} · Chat`, {
-    body: body || "New message",
-    tag: `chat-${message.id}`,
-  });
-
-  notification.onclick = () => {
-    window.focus();
-    notification.close();
-    if (typeof window.goToSection === "function") {
-      window.goToSection("chat");
-    }
-  };
-}
-
 function handleIncomingMessage(message) {
   if (chatInitialized && chatMessagesEl) {
     appendMessage(message);
   }
-  showMessageNotification(message);
 }
 
 function collectOnlineNicknames() {
@@ -585,8 +485,6 @@ function bindChatEvents() {
     syncPresence();
   });
 
-  chatNotifyBtn?.addEventListener("click", requestNotificationPermission);
-
   window.addEventListener("beforeunload", () => {
     chatChannel?.untrack();
   });
@@ -598,7 +496,6 @@ async function initChat() {
 
   loadSavedNickname();
   bindChatEvents();
-  updateNotifyButton();
   chatInitialized = true;
 
   if (!isChatConfigured()) {

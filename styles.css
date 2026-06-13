@@ -769,8 +769,7 @@ body {
 }
 
 .chat-card > .card-header,
-.chat-card > .chat-nickname-section,
-.chat-card > .chat-notify-row {
+.chat-card > .chat-nickname-section {
   flex-shrink: 0;
 }
 
@@ -830,46 +829,6 @@ body {
 .chat-nickname-input:disabled {
   opacity: 0.6;
   cursor: not-allowed;
-}
-
-.chat-notify-row {
-  margin-bottom: 1rem;
-}
-
-.chat-notify-btn {
-  width: 100%;
-  padding: 0.6rem 1rem;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  font-family: inherit;
-  color: var(--text-secondary);
-  background: var(--input-bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  transition: background var(--transition), border-color var(--transition), color var(--transition);
-}
-
-.chat-notify-btn:hover:not(:disabled) {
-  color: var(--text-primary);
-  border-color: rgba(59, 130, 246, 0.35);
-  background: rgba(59, 130, 246, 0.1);
-}
-
-.chat-notify-btn.is-active {
-  color: #86efac;
-  border-color: rgba(34, 197, 94, 0.35);
-  background: rgba(34, 197, 94, 0.08);
-}
-
-.chat-notify-btn:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-}
-
-.chat-notify-btn:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
 }
 
 .card-header--chat {
@@ -1412,15 +1371,6 @@ body {
   .chat-nickname-input {
     font-size: 1rem;
     padding: 0.625rem 0.75rem;
-  }
-
-  .chat-notify-row {
-    margin-bottom: 0.625rem;
-  }
-
-  .chat-notify-btn {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.75rem;
   }
 
   .chat-layout {

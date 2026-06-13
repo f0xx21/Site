@@ -3,6 +3,7 @@ const CHAT_MAX_TEXT_LENGTH = 500;
 const CHAT_MAX_NICKNAME_LENGTH = 24;
 const CHAT_NICKNAME_KEY = "chatNickname";
 const CHAT_NOTIFICATIONS_KEY = "chatNotificationsEnabled";
+const CHAT_PRESENCE_SESSION_KEY = "chatPresenceSessionId";
 
 const NICKNAME_COLORS = [
   "#f87171",
@@ -33,6 +34,9 @@ const chatInputEl = document.getElementById("chatInput");
 const chatSendBtn = document.getElementById("chatSendBtn");
 const chatStatusEl = document.getElementById("chatStatus");
 const chatNotifyBtn = document.getElementById("chatNotifyBtn");
+const chatOnlineListEl = document.getElementById("chatOnlineList");
+const chatOnlineCountEl = document.getElementById("chatOnlineCount");
+const chatOnlineEmptyEl = document.getElementById("chatOnlineEmpty");
 
 function setChatStatus(message, type = "") {
   if (!chatStatusEl) return;
@@ -123,6 +127,20 @@ function normalizeNickname(value) {
 
 function getNickname() {
   return normalizeNickname(chatNicknameEl?.value);
+}
+
+function getPresenceNickname() {
+  const nickname = getNickname();
+  return nickname || "Guest";
+}
+
+function getPresenceKey() {
+  let sessionId = sessionStorage.getItem(CHAT_PRESENCE_SESSION_KEY);
+  if (!sessionId) {
+    sessionId = crypto.randomUUID?.() ?? String(Date.now()) + Math.random().toString(36).slice(2);
+    sessionStorage.setItem(CHAT_PRESENCE_SESSION_KEY, sessionId);
+  }
+  return sessionId;
 }
 
 function saveNickname() {
@@ -377,6 +395,68 @@ function handleIncomingMessage(message) {
   showMessageNotification(message);
 }
 
+function collectOnlineNicknames() {
+  if (!chatChannel) return [];
+
+  const state = chatChannel.presenceState();
+  const nicknames = new Map();
+
+  Object.values(state).forEach((presences) => {
+    presences.forEach((presence) => {
+      const nick = displayNickname(presence.nickname);
+      nicknames.set(nick.toLowerCase(), nick);
+    });
+  });
+
+  return [...nicknames.values()].sort((a, b) =>
+    a.localeCompare(b, undefined, { sensitivity: "base" })
+  );
+}
+
+function renderOnlineUsers() {
+  if (!chatOnlineListEl || !chatOnlineCountEl) return;
+
+  const online = collectOnlineNicknames();
+  chatOnlineCountEl.textContent = String(online.length);
+  chatOnlineListEl.innerHTML = "";
+
+  if (chatOnlineEmptyEl) {
+    chatOnlineEmptyEl.hidden = online.length > 0;
+  }
+
+  online.forEach((nickname) => {
+    const item = document.createElement("li");
+    item.className = "chat-online-user";
+
+    const dot = document.createElement("span");
+    dot.className = "chat-online-dot";
+    dot.style.backgroundColor = getNicknameColor(nickname);
+
+    const name = document.createElement("span");
+    name.className = "chat-online-name";
+    name.textContent = nickname;
+    name.style.color = getNicknameColor(nickname);
+
+    item.appendChild(dot);
+    item.appendChild(name);
+    chatOnlineListEl.appendChild(item);
+  });
+}
+
+async function syncPresence() {
+  if (!chatChannel) return;
+
+  try {
+    await chatChannel.track({
+      nickname: getPresenceNickname(),
+      online_at: new Date().toISOString(),
+    });
+    renderOnlineUsers();
+  } catch (error) {
+    console.error("Presence sync error:", error);
+  }
+}
+
 async function bootstrapChatConnection() {
   if (chatBootstrapped) return;
   if (!isChatConfigured() || location.protocol === "file:") return;
@@ -390,7 +470,9 @@ async function bootstrapChatConnection() {
     if (chatChannel) return;
 
     chatChannel = client
-      .channel("public:messages")
+      .channel("public:chat", {
+        config: { presence: { key: getPresenceKey() } },
+      })
       .on(
         "postgres_changes",
         { event: "INSERT", schema: "public", table: "messages" },
@@ -400,12 +482,18 @@ async function bootstrapChatConnection() {
           }
         }
       )
-      .subscribe((status) => {
-        if (status === "SUBSCRIBED" && chatInitialized) {
-          if (nicknameColumnSupported === false) {
-            setChatStatus("Run supabase-migration-nicknames.sql to save nicknames", "error");
-          } else {
-            setChatStatus("Online");
+      .on("presence", { event: "sync" }, renderOnlineUsers)
+      .on("presence", { event: "join" }, renderOnlineUsers)
+      .on("presence", { event: "leave" }, renderOnlineUsers)
+      .subscribe(async (status) => {
+        if (status === "SUBSCRIBED") {
+          await syncPresence();
+          if (chatInitialized) {
+            if (nicknameColumnSupported === false) {
+              setChatStatus("Run supabase-migration-nicknames.sql to save nicknames", "error");
+            } else {
+              setChatStatus("Online");
+            }
           }
         } else if (status === "CHANNEL_ERROR" && chatInitialized) {
           setChatStatus("Connection error", "error");
@@ -484,10 +572,20 @@ function bindChatEvents() {
     }
   });
 
-  chatNicknameEl?.addEventListener("change", saveNickname);
-  chatNicknameEl?.addEventListener("blur", saveNickname);
+  chatNicknameEl?.addEventListener("change", () => {
+    saveNickname();
+    syncPresence();
+  });
+  chatNicknameEl?.addEventListener("blur", () => {
+    saveNickname();
+    syncPresence();
+  });
 
   chatNotifyBtn?.addEventListener("click", requestNotificationPermission);
+
+  window.addEventListener("beforeunload", () => {
+    chatChannel?.untrack();
+  });
 }
 
 async function initChat() {
@@ -524,6 +622,8 @@ async function initChat() {
     const client = getSupabaseClient();
     await loadRecentMessages(client);
     await bootstrapChatConnection();
+    renderOnlineUsers();
+    await syncPresence();
 
     if (chatChannel && nicknameColumnSupported !== false) {
       setChatStatus("Online");

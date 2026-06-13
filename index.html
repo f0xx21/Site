@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Конвертер валют</title>
   <link rel="icon" href="favicon.png" type="image/png" />
-  <link rel="stylesheet" href="styles.css?v=9" />
+  <link rel="stylesheet" href="styles.css?v=10" />
 </head>
 <body>
   <div class="site-layout">
@@ -431,31 +431,44 @@
             </button>
           </div>
 
-          <div
-            id="chatMessages"
-            class="chat-messages"
-            role="log"
-            aria-live="polite"
-            aria-relevant="additions"
-            aria-label="Chat messages"
-          ></div>
+          <div class="chat-layout">
+            <div class="chat-main">
+              <div
+                id="chatMessages"
+                class="chat-messages"
+                role="log"
+                aria-live="polite"
+                aria-relevant="additions"
+                aria-label="Chat messages"
+              ></div>
 
-          <div class="chat-input-row">
-            <textarea
-              id="chatInput"
-              class="chat-input"
-              rows="2"
-              maxlength="500"
-              placeholder="Write a message…"
-              aria-label="Message"
-              aria-describedby="chatStatus"
-            ></textarea>
-            <button type="button" id="chatSendBtn" class="chat-send-btn">
-              Send
-            </button>
+              <div class="chat-input-row">
+                <textarea
+                  id="chatInput"
+                  class="chat-input"
+                  rows="2"
+                  maxlength="500"
+                  placeholder="Write a message…"
+                  aria-label="Message"
+                  aria-describedby="chatStatus"
+                ></textarea>
+                <button type="button" id="chatSendBtn" class="chat-send-btn">
+                  Send
+                </button>
+              </div>
+
+              <p id="chatStatus" class="chat-status" role="status">Connecting…</p>
+            </div>
+
+            <aside class="chat-online-panel" aria-labelledby="chatOnlineHeading">
+              <h2 id="chatOnlineHeading" class="chat-online-heading">
+                Online
+                <span id="chatOnlineCount" class="chat-online-count">0</span>
+              </h2>
+              <ul id="chatOnlineList" class="chat-online-list" aria-live="polite"></ul>
+              <p id="chatOnlineEmpty" class="chat-online-empty">No one online yet</p>
+            </aside>
           </div>
-
-          <p id="chatStatus" class="chat-status" role="status">Connecting…</p>
         </main>
       </section>
     </div>
@@ -502,6 +515,6 @@
   <script src="books.js?v=5"></script>
   <script src="app.js?v=5"></script>
   <script src="weather.js?v=5"></script>
-  <script src="chat.js?v=9"></script>
+  <script src="chat.js?v=10"></script>
 </body>
 </html>

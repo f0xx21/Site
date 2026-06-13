@@ -6,6 +6,7 @@ const CHAT_NICKNAME_KEY = "chatNickname";
 let supabaseClient = null;
 let chatChannel = null;
 let chatInitialized = false;
+let nicknameColumnSupported = null;
 let knownMessageIds = new Set();
 
 const chatMessagesEl = document.getElementById("chatMessages");
@@ -20,17 +21,21 @@ function setChatStatus(message, type = "") {
   chatStatusEl.className = "chat-status" + (type ? ` ${type}` : "");
 }
 
+function isMissingNicknameColumn(error) {
+  const message = String(error?.message ?? "");
+  return error?.code === "42703" || message.includes("nickname");
+}
+
 function getChatErrorMessage(error) {
   if (location.protocol === "file:") {
     return "Chat does not work via file:// — run start-server.bat and open http://localhost:3000";
   }
 
-  const message = String(error?.message ?? error ?? "");
-  const code = String(error?.code ?? "");
-
-  if (message.includes("nickname") || code === "42703") {
-    return "Run supabase-migration-nicknames.sql in the Supabase SQL Editor";
+  if (isMissingNicknameColumn(error)) {
+    return "Run supabase-migration-nicknames.sql in Supabase SQL Editor";
   }
+
+  const message = String(error?.message ?? error ?? "");
 
   if (
     message.includes("Failed to fetch") ||
@@ -97,6 +102,8 @@ function scrollChatToBottom() {
 }
 
 function createMessageElement(message) {
+  const nickname = displayNickname(message.nickname);
+
   const item = document.createElement("article");
   item.className = "chat-message";
   item.dataset.messageId = String(message.id);
@@ -112,9 +119,9 @@ function createMessageElement(message) {
   const headerEl = document.createElement("div");
   headerEl.className = "chat-message-header";
 
-  const nicknameEl = document.createElement("span");
+  const nicknameEl = document.createElement("strong");
   nicknameEl.className = "chat-message-nickname";
-  nicknameEl.textContent = displayNickname(message.nickname);
+  nicknameEl.textContent = nickname;
 
   const timeEl = document.createElement("time");
   timeEl.className = "chat-message-time";
@@ -182,21 +189,42 @@ function getSupabaseClient() {
   return supabaseClient;
 }
 
+async function detectNicknameColumn(client) {
+  if (nicknameColumnSupported !== null) {
+    return nicknameColumnSupported;
+  }
+
+  const { error } = await client.from("messages").select("nickname").limit(1);
+  nicknameColumnSupported = !isMissingNicknameColumn(error);
+  return nicknameColumnSupported;
+}
+
 async function loadRecentMessages(client) {
-  const { data, error } = await client
+  const hasNickname = await detectNicknameColumn(client);
+  const query = client
     .from("messages")
-    .select("id, nickname, text, created_at")
+    .select(hasNickname ? "id, nickname, text, created_at" : "id, text, created_at")
     .order("created_at", { ascending: false })
     .limit(CHAT_MESSAGE_LIMIT);
 
+  const { data, error } = await query;
   if (error) throw error;
 
   clearChatMessages();
 
   const messages = (data ?? []).slice().reverse();
-  messages.forEach((message) => appendMessage(message, false));
+  messages.forEach((message) => {
+    if (!hasNickname) {
+      message.nickname = null;
+    }
+    appendMessage(message, false);
+  });
 
   scrollChatToBottom();
+
+  if (!hasNickname) {
+    setChatStatus("Run supabase-migration-nicknames.sql to save nicknames", "error");
+  }
 }
 
 function subscribeToMessages(client) {
@@ -214,8 +242,10 @@ function subscribeToMessages(client) {
       }
     )
     .subscribe((status) => {
-      if (status === "SUBSCRIBED") {
+      if (status === "SUBSCRIBED" && nicknameColumnSupported !== false) {
         setChatStatus("Online");
+      } else if (status === "SUBSCRIBED" && nicknameColumnSupported === false) {
+        setChatStatus("Run supabase-migration-nicknames.sql to save nicknames", "error");
       } else if (status === "CHANNEL_ERROR") {
         setChatStatus("Connection error", "error");
       } else if (status === "TIMED_OUT") {
@@ -248,12 +278,27 @@ async function sendMessage() {
 
   try {
     const client = getSupabaseClient();
-    const { error } = await client.from("messages").insert({ nickname, text });
+    const hasNickname = await detectNicknameColumn(client);
 
-    if (error) throw error;
+    if (hasNickname) {
+      const { error } = await client.from("messages").insert({ nickname, text });
+      if (error) throw error;
+    } else {
+      const { data, error } = await client
+        .from("messages")
+        .insert({ text })
+        .select("id, text, created_at")
+        .single();
+
+      if (error) throw error;
+
+      if (data) {
+        appendMessage({ ...data, nickname });
+      }
+    }
 
     chatInputEl.value = "";
-    setChatStatus("Online");
+    setChatStatus(hasNickname ? "Online" : "Run supabase-migration-nicknames.sql to save nicknames", hasNickname ? "" : "error");
   } catch (error) {
     setChatStatus(getChatErrorMessage(error), "error");
   } finally {

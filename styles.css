@@ -741,7 +741,8 @@ body {
   margin-bottom: 1.25rem;
 }
 
-.chat-nickname-section label {
+.chat-nickname-section label,
+#chatNicknameLabel {
   display: block;
   font-size: 0.8125rem;
   font-weight: 500;
@@ -751,6 +752,7 @@ body {
   letter-spacing: 0.05em;
 }
 
+#chatNickname,
 .chat-nickname-input {
   width: 100%;
   font-size: 1.125rem;
@@ -758,29 +760,36 @@ body {
   padding: 0.75rem 1rem;
   font-family: inherit;
   background: var(--input-bg);
+  background-color: rgba(15, 20, 25, 0.6);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-sm);
   color: var(--text-primary);
   color-scheme: dark;
   outline: none;
+  appearance: none;
+  -webkit-appearance: none;
   transition: border-color var(--transition), box-shadow var(--transition);
 }
 
+#chatNickname::placeholder,
 .chat-nickname-input::placeholder {
   color: var(--text-secondary);
   opacity: 0.5;
   font-weight: 500;
 }
 
+#chatNickname:hover:not(:disabled),
 .chat-nickname-input:hover:not(:disabled) {
   border-color: rgba(255, 255, 255, 0.15);
 }
 
+#chatNickname:focus-visible,
 .chat-nickname-input:focus-visible {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
 }
 
+#chatNickname:disabled,
 .chat-nickname-input:disabled {
   opacity: 0.6;
   cursor: not-allowed;
@@ -843,7 +852,7 @@ body {
 .chat-message-nickname {
   font-size: 0.9375rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #93c5fd;
   letter-spacing: -0.01em;
   word-break: break-word;
 }

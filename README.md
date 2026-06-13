@@ -50,18 +50,20 @@ alter publication supabase_realtime add table public.messages;
 
 ### 2. Настройте config.js
 
-```bash
-copy config.example.js config.js
-```
-
-Укажите в `config.js` свои ключи:
+Скопируйте `config.example.js` в `config.js` и укажите ключи:
 
 ```js
 window.SUPABASE_URL = "https://giqruuohmekzzivqoejx.supabase.co";
 window.SUPABASE_ANON_KEY = "sb_publishable_...";
 ```
 
-Файл `config.js` добавлен в `.gitignore` — не попадёт в репозиторий.
+**Для GitHub Pages:** файл `config.js` нужно **закоммитить и запушить** в репозиторий. Publishable key безопасен для браузера (не используйте Secret key).
+
+```bash
+git add config.js
+git commit -m "Add Supabase config for chat"
+git push
+```
 
 ### 3. Деплой на статический хостинг
 
@@ -94,5 +96,5 @@ window.SUPABASE_ANON_KEY = "sb_publishable_...";
 - `weather.js` — виджет погоды
 - `chat.js` — логика чата (Supabase Realtime)
 - `config.example.js` — шаблон ключей Supabase
-- `config.js` — ваши ключи (не коммитить)
+- `config.js` — ключи Supabase (нужен на GitHub Pages)
 - `books/` — PDF и EPUB книги

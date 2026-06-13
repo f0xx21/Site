@@ -193,7 +193,10 @@ async function initChat() {
   chatInitialized = true;
 
   if (!isChatConfigured()) {
-    setChatStatus("Скопируйте config.example.js в config.js и укажите ключи Supabase", "error");
+    setChatStatus(
+      "Не найден config.js на сервере — добавьте файл с ключами Supabase в репозиторий",
+      "error"
+    );
     chatSendBtn.disabled = true;
     chatInputEl.disabled = true;
     return;

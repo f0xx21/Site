@@ -427,6 +427,8 @@ function renderOnlineUsers() {
   online.forEach((nickname) => {
     const item = document.createElement("li");
     item.className = "chat-online-user";
+    item.title = nickname;
+    item.setAttribute("aria-label", nickname);
 
     const dot = document.createElement("span");
     const color = getNicknameColor(nickname);

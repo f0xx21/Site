@@ -2,6 +2,7 @@ const CHAT_MESSAGE_LIMIT = 50;
 const CHAT_MAX_TEXT_LENGTH = 500;
 const CHAT_MAX_NICKNAME_LENGTH = 24;
 const CHAT_NICKNAME_KEY = "chatNickname";
+const CHAT_NOTIFICATIONS_KEY = "chatNotificationsEnabled";
 
 const NICKNAME_COLORS = [
   "#f87171",
@@ -23,6 +24,7 @@ let supabaseClient = null;
 let chatChannel = null;
 let chatInitialized = false;
 let nicknameColumnSupported = null;
+let chatBootstrapped = false;
 let knownMessageIds = new Set();
 
 const chatMessagesEl = document.getElementById("chatMessages");
@@ -30,6 +32,7 @@ const chatNicknameEl = document.getElementById("chatNickname");
 const chatInputEl = document.getElementById("chatInput");
 const chatSendBtn = document.getElementById("chatSendBtn");
 const chatStatusEl = document.getElementById("chatStatus");
+const chatNotifyBtn = document.getElementById("chatNotifyBtn");
 
 function setChatStatus(message, type = "") {
   if (!chatStatusEl) return;
@@ -270,31 +273,150 @@ async function loadRecentMessages(client) {
   }
 }
 
-function subscribeToMessages(client) {
-  if (chatChannel) return;
+function notificationsSupported() {
+  return "Notification" in window;
+}
 
-  chatChannel = client
-    .channel("public:messages")
-    .on(
-      "postgres_changes",
-      { event: "INSERT", schema: "public", table: "messages" },
-      (payload) => {
-        if (payload.new) {
-          appendMessage(payload.new);
+function notificationsEnabled() {
+  return (
+    notificationsSupported() &&
+    Notification.permission === "granted" &&
+    localStorage.getItem(CHAT_NOTIFICATIONS_KEY) === "true"
+  );
+}
+
+function isChatSectionActive() {
+  return document.getElementById("section-chat")?.classList.contains("is-active");
+}
+
+function updateNotifyButton() {
+  if (!chatNotifyBtn) return;
+
+  if (!notificationsSupported()) {
+    chatNotifyBtn.hidden = true;
+    return;
+  }
+
+  chatNotifyBtn.hidden = false;
+  chatNotifyBtn.classList.remove("is-active");
+  chatNotifyBtn.disabled = false;
+
+  if (Notification.permission === "granted" && localStorage.getItem(CHAT_NOTIFICATIONS_KEY) === "true") {
+    chatNotifyBtn.textContent = "Notifications on";
+    chatNotifyBtn.classList.add("is-active");
+    return;
+  }
+
+  if (Notification.permission === "denied") {
+    chatNotifyBtn.textContent = "Notifications blocked in browser";
+    chatNotifyBtn.disabled = true;
+    return;
+  }
+
+  chatNotifyBtn.textContent = "Enable notifications";
+}
+
+async function requestNotificationPermission() {
+  if (!notificationsSupported()) return;
+
+  if (Notification.permission === "granted") {
+    localStorage.setItem(CHAT_NOTIFICATIONS_KEY, "true");
+    updateNotifyButton();
+    return;
+  }
+
+  if (Notification.permission === "denied") {
+    updateNotifyButton();
+    return;
+  }
+
+  const result = await Notification.requestPermission();
+  if (result === "granted") {
+    localStorage.setItem(CHAT_NOTIFICATIONS_KEY, "true");
+  } else {
+    localStorage.setItem(CHAT_NOTIFICATIONS_KEY, "false");
+  }
+
+  updateNotifyButton();
+}
+
+function shouldNotifyForMessage(message) {
+  if (!notificationsEnabled()) return false;
+
+  const author = displayNickname(message.nickname).toLowerCase();
+  const self = getNickname().toLowerCase();
+  if (author && self && author === self) return false;
+
+  return document.hidden || !isChatSectionActive();
+}
+
+function showMessageNotification(message) {
+  if (!shouldNotifyForMessage(message)) return;
+
+  const nickname = displayNickname(message.nickname);
+  const body = String(message.text ?? "").trim().slice(0, 120);
+
+  const notification = new Notification(`${nickname} · Chat`, {
+    body: body || "New message",
+    tag: `chat-${message.id}`,
+  });
+
+  notification.onclick = () => {
+    window.focus();
+    notification.close();
+    if (typeof window.goToSection === "function") {
+      window.goToSection("chat");
+    }
+  };
+}
+
+function handleIncomingMessage(message) {
+  if (chatInitialized && chatMessagesEl) {
+    appendMessage(message);
+  }
+  showMessageNotification(message);
+}
+
+async function bootstrapChatConnection() {
+  if (chatBootstrapped) return;
+  if (!isChatConfigured() || location.protocol === "file:") return;
+
+  chatBootstrapped = true;
+
+  try {
+    const client = getSupabaseClient();
+    await detectNicknameColumn(client);
+
+    if (chatChannel) return;
+
+    chatChannel = client
+      .channel("public:messages")
+      .on(
+        "postgres_changes",
+        { event: "INSERT", schema: "public", table: "messages" },
+        (payload) => {
+          if (payload.new) {
+            handleIncomingMessage(payload.new);
+          }
         }
-      }
-    )
-    .subscribe((status) => {
-      if (status === "SUBSCRIBED" && nicknameColumnSupported !== false) {
-        setChatStatus("Online");
-      } else if (status === "SUBSCRIBED" && nicknameColumnSupported === false) {
-        setChatStatus("Run supabase-migration-nicknames.sql to save nicknames", "error");
-      } else if (status === "CHANNEL_ERROR") {
-        setChatStatus("Connection error", "error");
-      } else if (status === "TIMED_OUT") {
-        setChatStatus("Connection timed out", "error");
-      }
-    });
+      )
+      .subscribe((status) => {
+        if (status === "SUBSCRIBED" && chatInitialized) {
+          if (nicknameColumnSupported === false) {
+            setChatStatus("Run supabase-migration-nicknames.sql to save nicknames", "error");
+          } else {
+            setChatStatus("Online");
+          }
+        } else if (status === "CHANNEL_ERROR" && chatInitialized) {
+          setChatStatus("Connection error", "error");
+        } else if (status === "TIMED_OUT" && chatInitialized) {
+          setChatStatus("Connection timed out", "error");
+        }
+      });
+  } catch (error) {
+    console.error("Chat bootstrap error:", error);
+    chatBootstrapped = false;
+  }
 }
 
 async function sendMessage() {
@@ -364,6 +486,8 @@ function bindChatEvents() {
 
   chatNicknameEl?.addEventListener("change", saveNickname);
   chatNicknameEl?.addEventListener("blur", saveNickname);
+
+  chatNotifyBtn?.addEventListener("click", requestNotificationPermission);
 }
 
 async function initChat() {
@@ -372,6 +496,7 @@ async function initChat() {
 
   loadSavedNickname();
   bindChatEvents();
+  updateNotifyButton();
   chatInitialized = true;
 
   if (!isChatConfigured()) {
@@ -398,7 +523,11 @@ async function initChat() {
   try {
     const client = getSupabaseClient();
     await loadRecentMessages(client);
-    subscribeToMessages(client);
+    await bootstrapChatConnection();
+
+    if (chatChannel && nicknameColumnSupported !== false) {
+      setChatStatus("Online");
+    }
   } catch (error) {
     console.error("Chat init error:", error);
     setChatStatus(getChatErrorMessage(error), "error");
@@ -409,3 +538,9 @@ async function initChat() {
 }
 
 window.initChat = initChat;
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", bootstrapChatConnection);
+} else {
+  bootstrapChatConnection();
+}

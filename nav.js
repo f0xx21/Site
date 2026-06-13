@@ -34,6 +34,8 @@ function showSection(sectionId) {
   }
 }
 
+window.goToSection = showSection;
+
 navItems.forEach((item) => {
   item.addEventListener("click", () => {
     showSection(item.dataset.section);

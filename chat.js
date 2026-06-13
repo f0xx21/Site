@@ -3,6 +3,22 @@ const CHAT_MAX_TEXT_LENGTH = 500;
 const CHAT_MAX_NICKNAME_LENGTH = 24;
 const CHAT_NICKNAME_KEY = "chatNickname";
 
+const NICKNAME_COLORS = [
+  "#f87171",
+  "#fb923c",
+  "#fbbf24",
+  "#a3e635",
+  "#34d399",
+  "#2dd4bf",
+  "#22d3ee",
+  "#60a5fa",
+  "#818cf8",
+  "#a78bfa",
+  "#c084fc",
+  "#f472b6",
+  "#fb7185",
+];
+
 let supabaseClient = null;
 let chatChannel = null;
 let chatInitialized = false;
@@ -50,12 +66,12 @@ function getChatErrorMessage(error) {
 
 function formatMessageTime(isoString) {
   try {
-    return new Date(isoString).toLocaleString("en-US", {
-      day: "numeric",
-      month: "short",
-      hour: "2-digit",
-      minute: "2-digit",
-    });
+    const date = new Date(isoString);
+    const month = date.toLocaleString("en-US", { month: "short" });
+    const day = date.getDate();
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    return `${month} ${day}, ${hours}:${minutes}`;
   } catch {
     return "";
   }
@@ -71,6 +87,15 @@ function getNicknameInitial(nickname) {
   const name = displayNickname(nickname);
   const letter = name.charAt(0).toUpperCase();
   return letter || "?";
+}
+
+function getNicknameColor(nickname) {
+  const name = displayNickname(nickname).toLowerCase();
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    hash = (hash * 31 + name.charCodeAt(i)) >>> 0;
+  }
+  return NICKNAME_COLORS[hash % NICKNAME_COLORS.length];
 }
 
 function normalizeNickname(value) {
@@ -107,6 +132,7 @@ function createMessageElement(message) {
   const item = document.createElement("article");
   item.className = "chat-message";
   item.dataset.messageId = String(message.id);
+  item.style.setProperty("--nick-color", getNicknameColor(message.nickname));
 
   const avatarEl = document.createElement("div");
   avatarEl.className = "chat-message-avatar";

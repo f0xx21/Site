@@ -48,15 +48,11 @@ async function fetchBenzupRostov() {
     values[key] = parsePrice(row.index);
   }
 
-  if (values.ai92 != null && values.ai95 != null) {
-    values.petrol = Number(((values.ai92 + values.ai95) / 2).toFixed(2));
-  }
-
   return { date: today, values, source: "benzup" };
 }
 
 function rowsToPayload(rows) {
-  const series = { ai92: [], ai95: [], ai100: [], petrol: [], diesel: [] };
+  const series = { ai92: [], ai95: [], ai100: [], diesel: [] };
   let latestAt = null;
 
   for (const row of rows) {
@@ -86,7 +82,6 @@ function rowsToPayload(rows) {
       ai92: series.ai92.length,
       ai95: series.ai95.length,
       ai100: series.ai100.length,
-      petrol: series.petrol.length,
       diesel: series.diesel.length,
     },
   };

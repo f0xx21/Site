@@ -1,4 +1,6 @@
--- Add AI-100 product support (run if fuel_prices already exists without ai100)
+-- Remove averaged petrol series from fuel_prices
+
+delete from public.fuel_prices where product = 'petrol';
 
 alter table public.fuel_prices
   drop constraint if exists fuel_prices_product_check;

@@ -8,11 +8,11 @@ const FUEL_TYPES = [
   { id: "ai92", label: "АИ-92", color: "#60a5fa" },
   { id: "ai95", label: "АИ-95", color: "#34d399" },
   { id: "ai100", label: "АИ-100", color: "#c084fc" },
-  { id: "petrol", label: "Бензин (средний)", color: "#f59e0b" },
   { id: "diesel", label: "Дизельное топливо", color: "#f87171" },
 ];
 
 const FUEL_PERIODS = {
+  week: { label: "Неделя", days: 7 },
   month: { label: "Месяц", days: 31 },
   year: { label: "Год", days: 365 },
   threeYears: { label: "3 года", days: 3 * 365 },
@@ -113,7 +113,7 @@ function formatAxisLabel(isoDate, periodId, isYearBoundary) {
   try {
     const date = new Date(`${isoDate}T00:00:00`);
 
-    if (periodId === "month") {
+    if (periodId === "week" || periodId === "month") {
       return formatShortDate(isoDate);
     }
 
@@ -132,6 +132,10 @@ function formatAxisLabel(isoDate, periodId, isYearBoundary) {
 
 function pickAxisLabelIndexes(points, periodId) {
   const indexes = new Set([0, points.length - 1]);
+
+  if (periodId === "week") {
+    return points.map((_, index) => index);
+  }
 
   if (periodId === "month") {
     if (points.length > 2) {
@@ -177,7 +181,7 @@ function isYearBoundary(points, index) {
 }
 
 function rowsToPayload(rows) {
-  const series = { ai92: [], ai95: [], ai100: [], petrol: [], diesel: [] };
+  const series = { ai92: [], ai95: [], ai100: [], diesel: [] };
   let latestAt = null;
 
   for (const row of rows) {
@@ -207,7 +211,6 @@ function rowsToPayload(rows) {
       ai92: series.ai92.length,
       ai95: series.ai95.length,
       ai100: series.ai100.length,
-      petrol: series.petrol.length,
       diesel: series.diesel.length,
     },
   };

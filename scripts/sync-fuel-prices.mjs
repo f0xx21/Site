@@ -71,7 +71,7 @@ function parseRussianDate(text) {
 }
 
 function emptySeries() {
-  return { ai92: [], ai95: [], ai100: [], petrol: [], diesel: [] };
+  return { ai92: [], ai95: [], ai100: [], diesel: [] };
 }
 
 function upsertPoint(series, key, point) {
@@ -141,10 +141,6 @@ async function fetchBenzupRostov() {
     values[key] = parsePrice(row.index);
   }
 
-  if (values.ai92 != null && values.ai95 != null) {
-    values.petrol = Number(((values.ai92 + values.ai95) / 2).toFixed(2));
-  }
-
   return { date: today, values, source: "benzup" };
 }
 
@@ -202,12 +198,12 @@ function parseRosstatReport(html, reportUrl) {
   const rowMatch = html.match(regionPattern);
   if (!rowMatch) return null;
 
-  const [petrol, ai92, ai95, ai100, diesel] = rowMatch.slice(1).map(parsePrice);
-  if ([petrol, ai92, ai95, ai100, diesel].some((value) => value == null)) return null;
+  const [, ai92, ai95, ai100, diesel] = rowMatch.slice(1).map(parsePrice);
+  if ([ai92, ai95, ai100, diesel].some((value) => value == null)) return null;
 
   return {
     date: formatDateISO(titleDate),
-    values: { petrol, ai92, ai95, ai100, diesel },
+    values: { ai92, ai95, ai100, diesel },
     source: "rosstat",
     reportUrl,
   };
@@ -297,7 +293,7 @@ async function main() {
     stats: {
       ai92: series.ai92.length,
       ai95: series.ai95.length,
-      petrol: series.petrol.length,
+      ai100: series.ai100.length,
       diesel: series.diesel.length,
     },
     periods: {

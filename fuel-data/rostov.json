@@ -1,0 +1,4365 @@
+{
+  "region": "Ростовская область",
+  "regionId": 61,
+  "updatedAt": "2026-06-17T14:01:50.589Z",
+  "sources": {
+    "current": {
+      "name": "Benzup / OMT-Consult",
+      "url": "https://api.omt-consult.ru/index/regional",
+      "description": "Ежедневные региональные индексы розничных цен на АЗС"
+    },
+    "history": {
+      "name": "Росстат",
+      "url": "https://rosstat.gov.ru/central-news",
+      "description": "Еженедельный мониторинг средних потребительских цен"
+    }
+  },
+  "series": {
+    "ai92": [
+      {
+        "date": "2024-11-11",
+        "price": 54.15,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-11-18",
+        "price": 54.51,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-11-25",
+        "price": 54.8,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-12-02",
+        "price": 55.02,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-12-09",
+        "price": 55.32,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-12-16",
+        "price": 55.57,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-12-23",
+        "price": 55.68,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-01-13",
+        "price": 55.97,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-01-20",
+        "price": 55.9,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-01-27",
+        "price": 55.89,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-02-03",
+        "price": 56,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-02-10",
+        "price": 56.02,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-02-17",
+        "price": 56.13,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-02-24",
+        "price": 56.15,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-03",
+        "price": 56.27,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-10",
+        "price": 56.33,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-17",
+        "price": 56.35,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-24",
+        "price": 56.36,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-31",
+        "price": 56.37,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-04-07",
+        "price": 56.54,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-04-14",
+        "price": 56.58,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-04-21",
+        "price": 56.58,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-04-28",
+        "price": 56.64,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-05-05",
+        "price": 56.74,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-05-12",
+        "price": 56.78,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-05-19",
+        "price": 56.84,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-05-26",
+        "price": 56.85,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-02",
+        "price": 56.88,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-09",
+        "price": 56.89,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-16",
+        "price": 56.95,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-23",
+        "price": 57.05,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-30",
+        "price": 57.12,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-07-07",
+        "price": 57.3,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-07-14",
+        "price": 57.45,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-07-21",
+        "price": 57.59,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-07-28",
+        "price": 57.83,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-08-04",
+        "price": 58.04,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-08-11",
+        "price": 58.19,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-08-18",
+        "price": 58.75,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-08-25",
+        "price": 59.33,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-01",
+        "price": 59.49,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-08",
+        "price": 60.12,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-15",
+        "price": 60.58,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-22",
+        "price": 61.31,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-29",
+        "price": 62.12,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-10-06",
+        "price": 62.57,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-10-13",
+        "price": 63.09,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-10-20",
+        "price": 63.55,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-10-27",
+        "price": 63.75,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-11-05",
+        "price": 63.29,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-11-10",
+        "price": 63.22,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-11-17",
+        "price": 63.07,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-11-24",
+        "price": 62.71,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-12-01",
+        "price": 62.59,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-12-08",
+        "price": 62.46,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-12-15",
+        "price": 62.17,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-12-22",
+        "price": 62.06,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-01-12",
+        "price": 62.09,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-01-19",
+        "price": 62.19,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-01-26",
+        "price": 62.22,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-02-02",
+        "price": 62.35,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-02-09",
+        "price": 62.44,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-02-16",
+        "price": 62.49,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-02-24",
+        "price": 62.59,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-02",
+        "price": 62.68,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-10",
+        "price": 62.73,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-16",
+        "price": 62.88,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-23",
+        "price": 63.21,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-30",
+        "price": 63.46,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-04-06",
+        "price": 63.6,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-04-13",
+        "price": 63.68,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-04-20",
+        "price": 63.77,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-04-27",
+        "price": 63.81,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-05-04",
+        "price": 63.92,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-05-12",
+        "price": 63.98,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-05-18",
+        "price": 64.08,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-05-25",
+        "price": 64.32,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-06-01",
+        "price": 64.57,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-06-08",
+        "price": 65.66,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-06-17",
+        "price": 70.26,
+        "source": "benzup"
+      }
+    ],
+    "ai95": [
+      {
+        "date": "2024-11-11",
+        "price": 60.51,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-11-18",
+        "price": 60.78,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-11-25",
+        "price": 61,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-12-02",
+        "price": 61.21,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-12-09",
+        "price": 61.52,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-12-16",
+        "price": 61.8,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-12-23",
+        "price": 61.92,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-01-13",
+        "price": 62.11,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-01-20",
+        "price": 62.08,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-01-27",
+        "price": 62.07,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-02-03",
+        "price": 62.2,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-02-10",
+        "price": 62.24,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-02-17",
+        "price": 62.36,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-02-24",
+        "price": 62.38,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-03",
+        "price": 62.51,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-10",
+        "price": 62.58,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-17",
+        "price": 62.61,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-24",
+        "price": 62.67,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-31",
+        "price": 62.68,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-04-07",
+        "price": 62.82,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-04-14",
+        "price": 62.88,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-04-21",
+        "price": 62.88,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-04-28",
+        "price": 62.92,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-05-05",
+        "price": 63.02,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-05-12",
+        "price": 63.07,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-05-19",
+        "price": 63.18,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-05-26",
+        "price": 63.19,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-02",
+        "price": 63.26,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-09",
+        "price": 63.27,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-16",
+        "price": 63.35,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-23",
+        "price": 63.46,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-30",
+        "price": 63.52,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-07-07",
+        "price": 63.69,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-07-14",
+        "price": 63.83,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-07-21",
+        "price": 64.02,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-07-28",
+        "price": 64.24,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-08-04",
+        "price": 64.57,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-08-11",
+        "price": 64.72,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-08-18",
+        "price": 65.35,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-08-25",
+        "price": 65.9,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-01",
+        "price": 66.17,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-08",
+        "price": 66.83,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-15",
+        "price": 67.36,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-22",
+        "price": 68.14,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-29",
+        "price": 68.88,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-10-06",
+        "price": 69.38,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-10-13",
+        "price": 69.8,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-10-20",
+        "price": 69.84,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-10-27",
+        "price": 70,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-11-05",
+        "price": 69.51,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-11-10",
+        "price": 69.46,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-11-17",
+        "price": 69.34,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-11-24",
+        "price": 69.03,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-12-01",
+        "price": 68.95,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-12-08",
+        "price": 68.9,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-12-15",
+        "price": 68.75,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-12-22",
+        "price": 68.71,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-01-12",
+        "price": 68.91,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-01-19",
+        "price": 69.01,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-01-26",
+        "price": 69.07,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-02-02",
+        "price": 69.21,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-02-09",
+        "price": 69.28,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-02-16",
+        "price": 69.35,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-02-24",
+        "price": 69.46,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-02",
+        "price": 69.54,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-10",
+        "price": 69.63,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-16",
+        "price": 69.75,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-23",
+        "price": 70.04,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-30",
+        "price": 70.31,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-04-06",
+        "price": 70.44,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-04-13",
+        "price": 70.5,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-04-20",
+        "price": 70.59,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-04-27",
+        "price": 70.62,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-05-04",
+        "price": 70.75,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-05-12",
+        "price": 70.89,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-05-18",
+        "price": 71.01,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-05-25",
+        "price": 71.34,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-06-01",
+        "price": 71.57,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-06-08",
+        "price": 72.66,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-06-17",
+        "price": 77.19,
+        "source": "benzup"
+      }
+    ],
+    "petrol": [
+      {
+        "date": "2024-11-11",
+        "price": 60.45,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-11-18",
+        "price": 60.77,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-11-25",
+        "price": 60.92,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-12-02",
+        "price": 61.15,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-12-09",
+        "price": 61.52,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-12-16",
+        "price": 61.84,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-12-23",
+        "price": 61.98,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-01-13",
+        "price": 62.51,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-01-20",
+        "price": 62.46,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-01-27",
+        "price": 62.46,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-02-03",
+        "price": 60.13,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-02-10",
+        "price": 60.17,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-02-17",
+        "price": 60.28,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-02-24",
+        "price": 60.3,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-03",
+        "price": 60.43,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-10",
+        "price": 60.5,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-17",
+        "price": 60.52,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-24",
+        "price": 60.56,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-31",
+        "price": 60.57,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-04-07",
+        "price": 60.72,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-04-14",
+        "price": 60.77,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-04-21",
+        "price": 60.77,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-04-28",
+        "price": 60.82,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-05-05",
+        "price": 60.91,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-05-12",
+        "price": 60.96,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-05-19",
+        "price": 61.04,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-05-26",
+        "price": 61.05,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-02",
+        "price": 61.1,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-09",
+        "price": 61.11,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-16",
+        "price": 61.18,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-23",
+        "price": 61.29,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-30",
+        "price": 61.35,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-07-07",
+        "price": 61.53,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-07-14",
+        "price": 61.67,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-07-21",
+        "price": 61.84,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-07-28",
+        "price": 62.06,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-08-04",
+        "price": 62.33,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-08-11",
+        "price": 62.48,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-08-18",
+        "price": 63.07,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-08-25",
+        "price": 63.62,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-01",
+        "price": 63.86,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-08",
+        "price": 64.5,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-15",
+        "price": 65.01,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-22",
+        "price": 65.76,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-29",
+        "price": 66.54,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-10-06",
+        "price": 67.04,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-10-13",
+        "price": 67.49,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-10-20",
+        "price": 67.69,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-10-27",
+        "price": 67.87,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-11-05",
+        "price": 67.42,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-11-10",
+        "price": 67.36,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-11-17",
+        "price": 67.24,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-11-24",
+        "price": 66.92,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-12-01",
+        "price": 66.83,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-12-08",
+        "price": 66.75,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-12-15",
+        "price": 66.55,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-12-22",
+        "price": 66.48,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-01-12",
+        "price": 66.64,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-01-19",
+        "price": 66.74,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-01-26",
+        "price": 66.79,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-02-02",
+        "price": 66.86,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-02-09",
+        "price": 66.94,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-02-16",
+        "price": 67,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-02-24",
+        "price": 67.11,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-02",
+        "price": 67.19,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-10",
+        "price": 67.26,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-16",
+        "price": 67.4,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-23",
+        "price": 67.71,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-30",
+        "price": 67.97,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-04-06",
+        "price": 68.11,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-04-13",
+        "price": 68.18,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-04-20",
+        "price": 68.27,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-04-27",
+        "price": 68.31,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-05-04",
+        "price": 68.44,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-05-12",
+        "price": 68.54,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-05-18",
+        "price": 68.65,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-05-25",
+        "price": 68.94,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-06-01",
+        "price": 69.19,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-06-08",
+        "price": 70.3,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-06-17",
+        "price": 73.72,
+        "source": "benzup"
+      }
+    ],
+    "diesel": [
+      {
+        "date": "2024-11-11",
+        "price": 63.71,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-11-18",
+        "price": 64.09,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-11-25",
+        "price": 64.42,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-12-02",
+        "price": 64.65,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-12-09",
+        "price": 64.93,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-12-16",
+        "price": 65.34,
+        "source": "rosstat"
+      },
+      {
+        "date": "2024-12-23",
+        "price": 65.52,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-01-13",
+        "price": 65.96,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-01-20",
+        "price": 65.96,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-01-27",
+        "price": 65.96,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-02-03",
+        "price": 66.08,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-02-10",
+        "price": 66.11,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-02-17",
+        "price": 66.22,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-02-24",
+        "price": 66.25,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-03",
+        "price": 66.25,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-10",
+        "price": 66.26,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-17",
+        "price": 66.22,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-24",
+        "price": 66.26,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-03-31",
+        "price": 66.27,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-04-07",
+        "price": 66.35,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-04-14",
+        "price": 66.39,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-04-21",
+        "price": 66.44,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-04-28",
+        "price": 66.51,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-05-05",
+        "price": 66.54,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-05-12",
+        "price": 66.56,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-05-19",
+        "price": 66.62,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-05-26",
+        "price": 66.62,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-02",
+        "price": 66.66,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-09",
+        "price": 66.71,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-16",
+        "price": 66.72,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-23",
+        "price": 66.72,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-06-30",
+        "price": 66.74,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-07-07",
+        "price": 66.85,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-07-14",
+        "price": 66.88,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-07-21",
+        "price": 66.91,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-07-28",
+        "price": 66.99,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-08-04",
+        "price": 67,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-08-11",
+        "price": 67,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-08-18",
+        "price": 67.12,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-08-25",
+        "price": 67.29,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-01",
+        "price": 67.45,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-08",
+        "price": 67.8,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-15",
+        "price": 68.17,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-22",
+        "price": 68.74,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-09-29",
+        "price": 69.37,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-10-06",
+        "price": 69.87,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-10-13",
+        "price": 70.39,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-10-20",
+        "price": 70.27,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-10-27",
+        "price": 70.31,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-11-05",
+        "price": 70.51,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-11-10",
+        "price": 70.54,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-11-17",
+        "price": 70.65,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-11-24",
+        "price": 70.76,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-12-01",
+        "price": 70.86,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-12-08",
+        "price": 70.9,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-12-15",
+        "price": 71,
+        "source": "rosstat"
+      },
+      {
+        "date": "2025-12-22",
+        "price": 70.97,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-01-12",
+        "price": 71.7,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-01-19",
+        "price": 71.84,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-01-26",
+        "price": 71.92,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-02-02",
+        "price": 71.98,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-02-09",
+        "price": 72.06,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-02-16",
+        "price": 72.1,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-02-24",
+        "price": 72.06,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-02",
+        "price": 72.06,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-10",
+        "price": 72.08,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-16",
+        "price": 72.21,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-23",
+        "price": 72.47,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-03-30",
+        "price": 72.63,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-04-06",
+        "price": 72.83,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-04-13",
+        "price": 72.94,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-04-20",
+        "price": 73.03,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-04-27",
+        "price": 73.12,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-05-04",
+        "price": 73.3,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-05-12",
+        "price": 73.42,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-05-18",
+        "price": 73.68,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-05-25",
+        "price": 74.12,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-06-01",
+        "price": 74.37,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-06-08",
+        "price": 75.67,
+        "source": "rosstat"
+      },
+      {
+        "date": "2026-06-17",
+        "price": 79.32,
+        "source": "benzup"
+      }
+    ]
+  },
+  "stats": {
+    "ai92": 80,
+    "ai95": 80,
+    "petrol": 80,
+    "diesel": 80
+  },
+  "periods": {
+    "month": {
+      "ai92": [
+        {
+          "date": "2026-05-18",
+          "price": 64.08,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-25",
+          "price": 64.32,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-01",
+          "price": 64.57,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-08",
+          "price": 65.66,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-17",
+          "price": 70.26,
+          "source": "benzup"
+        }
+      ],
+      "ai95": [
+        {
+          "date": "2026-05-18",
+          "price": 71.01,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-25",
+          "price": 71.34,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-01",
+          "price": 71.57,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-08",
+          "price": 72.66,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-17",
+          "price": 77.19,
+          "source": "benzup"
+        }
+      ],
+      "petrol": [
+        {
+          "date": "2026-05-18",
+          "price": 68.65,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-25",
+          "price": 68.94,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-01",
+          "price": 69.19,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-08",
+          "price": 70.3,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-17",
+          "price": 73.72,
+          "source": "benzup"
+        }
+      ],
+      "diesel": [
+        {
+          "date": "2026-05-18",
+          "price": 73.68,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-25",
+          "price": 74.12,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-01",
+          "price": 74.37,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-08",
+          "price": 75.67,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-17",
+          "price": 79.32,
+          "source": "benzup"
+        }
+      ]
+    },
+    "year": {
+      "ai92": [
+        {
+          "date": "2025-06-23",
+          "price": 57.05,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-30",
+          "price": 57.12,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-07",
+          "price": 57.3,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-14",
+          "price": 57.45,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-21",
+          "price": 57.59,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-28",
+          "price": 57.83,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-04",
+          "price": 58.04,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-11",
+          "price": 58.19,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-18",
+          "price": 58.75,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-25",
+          "price": 59.33,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-01",
+          "price": 59.49,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-08",
+          "price": 60.12,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-15",
+          "price": 60.58,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-22",
+          "price": 61.31,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-29",
+          "price": 62.12,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-06",
+          "price": 62.57,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-13",
+          "price": 63.09,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-20",
+          "price": 63.55,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-27",
+          "price": 63.75,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-05",
+          "price": 63.29,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-10",
+          "price": 63.22,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-17",
+          "price": 63.07,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-24",
+          "price": 62.71,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-01",
+          "price": 62.59,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-08",
+          "price": 62.46,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-15",
+          "price": 62.17,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-22",
+          "price": 62.06,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-12",
+          "price": 62.09,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-19",
+          "price": 62.19,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-26",
+          "price": 62.22,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-02",
+          "price": 62.35,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-09",
+          "price": 62.44,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-16",
+          "price": 62.49,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-24",
+          "price": 62.59,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-02",
+          "price": 62.68,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-10",
+          "price": 62.73,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-16",
+          "price": 62.88,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-23",
+          "price": 63.21,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-30",
+          "price": 63.46,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-06",
+          "price": 63.6,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-13",
+          "price": 63.68,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-20",
+          "price": 63.77,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-27",
+          "price": 63.81,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-04",
+          "price": 63.92,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-12",
+          "price": 63.98,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-18",
+          "price": 64.08,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-25",
+          "price": 64.32,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-01",
+          "price": 64.57,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-08",
+          "price": 65.66,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-17",
+          "price": 70.26,
+          "source": "benzup"
+        }
+      ],
+      "ai95": [
+        {
+          "date": "2025-06-23",
+          "price": 63.46,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-30",
+          "price": 63.52,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-07",
+          "price": 63.69,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-14",
+          "price": 63.83,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-21",
+          "price": 64.02,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-28",
+          "price": 64.24,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-04",
+          "price": 64.57,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-11",
+          "price": 64.72,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-18",
+          "price": 65.35,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-25",
+          "price": 65.9,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-01",
+          "price": 66.17,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-08",
+          "price": 66.83,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-15",
+          "price": 67.36,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-22",
+          "price": 68.14,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-29",
+          "price": 68.88,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-06",
+          "price": 69.38,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-13",
+          "price": 69.8,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-20",
+          "price": 69.84,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-27",
+          "price": 70,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-05",
+          "price": 69.51,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-10",
+          "price": 69.46,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-17",
+          "price": 69.34,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-24",
+          "price": 69.03,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-01",
+          "price": 68.95,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-08",
+          "price": 68.9,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-15",
+          "price": 68.75,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-22",
+          "price": 68.71,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-12",
+          "price": 68.91,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-19",
+          "price": 69.01,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-26",
+          "price": 69.07,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-02",
+          "price": 69.21,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-09",
+          "price": 69.28,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-16",
+          "price": 69.35,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-24",
+          "price": 69.46,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-02",
+          "price": 69.54,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-10",
+          "price": 69.63,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-16",
+          "price": 69.75,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-23",
+          "price": 70.04,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-30",
+          "price": 70.31,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-06",
+          "price": 70.44,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-13",
+          "price": 70.5,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-20",
+          "price": 70.59,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-27",
+          "price": 70.62,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-04",
+          "price": 70.75,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-12",
+          "price": 70.89,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-18",
+          "price": 71.01,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-25",
+          "price": 71.34,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-01",
+          "price": 71.57,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-08",
+          "price": 72.66,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-17",
+          "price": 77.19,
+          "source": "benzup"
+        }
+      ],
+      "petrol": [
+        {
+          "date": "2025-06-23",
+          "price": 61.29,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-30",
+          "price": 61.35,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-07",
+          "price": 61.53,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-14",
+          "price": 61.67,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-21",
+          "price": 61.84,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-28",
+          "price": 62.06,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-04",
+          "price": 62.33,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-11",
+          "price": 62.48,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-18",
+          "price": 63.07,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-25",
+          "price": 63.62,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-01",
+          "price": 63.86,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-08",
+          "price": 64.5,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-15",
+          "price": 65.01,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-22",
+          "price": 65.76,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-29",
+          "price": 66.54,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-06",
+          "price": 67.04,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-13",
+          "price": 67.49,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-20",
+          "price": 67.69,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-27",
+          "price": 67.87,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-05",
+          "price": 67.42,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-10",
+          "price": 67.36,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-17",
+          "price": 67.24,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-24",
+          "price": 66.92,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-01",
+          "price": 66.83,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-08",
+          "price": 66.75,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-15",
+          "price": 66.55,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-22",
+          "price": 66.48,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-12",
+          "price": 66.64,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-19",
+          "price": 66.74,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-26",
+          "price": 66.79,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-02",
+          "price": 66.86,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-09",
+          "price": 66.94,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-16",
+          "price": 67,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-24",
+          "price": 67.11,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-02",
+          "price": 67.19,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-10",
+          "price": 67.26,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-16",
+          "price": 67.4,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-23",
+          "price": 67.71,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-30",
+          "price": 67.97,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-06",
+          "price": 68.11,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-13",
+          "price": 68.18,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-20",
+          "price": 68.27,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-27",
+          "price": 68.31,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-04",
+          "price": 68.44,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-12",
+          "price": 68.54,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-18",
+          "price": 68.65,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-25",
+          "price": 68.94,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-01",
+          "price": 69.19,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-08",
+          "price": 70.3,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-17",
+          "price": 73.72,
+          "source": "benzup"
+        }
+      ],
+      "diesel": [
+        {
+          "date": "2025-06-23",
+          "price": 66.72,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-30",
+          "price": 66.74,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-07",
+          "price": 66.85,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-14",
+          "price": 66.88,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-21",
+          "price": 66.91,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-28",
+          "price": 66.99,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-04",
+          "price": 67,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-11",
+          "price": 67,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-18",
+          "price": 67.12,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-25",
+          "price": 67.29,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-01",
+          "price": 67.45,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-08",
+          "price": 67.8,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-15",
+          "price": 68.17,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-22",
+          "price": 68.74,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-29",
+          "price": 69.37,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-06",
+          "price": 69.87,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-13",
+          "price": 70.39,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-20",
+          "price": 70.27,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-27",
+          "price": 70.31,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-05",
+          "price": 70.51,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-10",
+          "price": 70.54,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-17",
+          "price": 70.65,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-24",
+          "price": 70.76,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-01",
+          "price": 70.86,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-08",
+          "price": 70.9,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-15",
+          "price": 71,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-22",
+          "price": 70.97,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-12",
+          "price": 71.7,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-19",
+          "price": 71.84,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-26",
+          "price": 71.92,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-02",
+          "price": 71.98,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-09",
+          "price": 72.06,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-16",
+          "price": 72.1,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-24",
+          "price": 72.06,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-02",
+          "price": 72.06,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-10",
+          "price": 72.08,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-16",
+          "price": 72.21,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-23",
+          "price": 72.47,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-30",
+          "price": 72.63,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-06",
+          "price": 72.83,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-13",
+          "price": 72.94,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-20",
+          "price": 73.03,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-27",
+          "price": 73.12,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-04",
+          "price": 73.3,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-12",
+          "price": 73.42,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-18",
+          "price": 73.68,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-25",
+          "price": 74.12,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-01",
+          "price": 74.37,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-08",
+          "price": 75.67,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-17",
+          "price": 79.32,
+          "source": "benzup"
+        }
+      ]
+    },
+    "threeYears": {
+      "ai92": [
+        {
+          "date": "2024-11-11",
+          "price": 54.15,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-11-18",
+          "price": 54.51,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-11-25",
+          "price": 54.8,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-12-02",
+          "price": 55.02,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-12-09",
+          "price": 55.32,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-12-16",
+          "price": 55.57,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-12-23",
+          "price": 55.68,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-01-13",
+          "price": 55.97,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-01-20",
+          "price": 55.9,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-01-27",
+          "price": 55.89,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-02-03",
+          "price": 56,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-02-10",
+          "price": 56.02,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-02-17",
+          "price": 56.13,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-02-24",
+          "price": 56.15,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-03",
+          "price": 56.27,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-10",
+          "price": 56.33,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-17",
+          "price": 56.35,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-24",
+          "price": 56.36,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-31",
+          "price": 56.37,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-04-07",
+          "price": 56.54,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-04-14",
+          "price": 56.58,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-04-21",
+          "price": 56.58,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-04-28",
+          "price": 56.64,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-05-05",
+          "price": 56.74,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-05-12",
+          "price": 56.78,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-05-19",
+          "price": 56.84,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-05-26",
+          "price": 56.85,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-02",
+          "price": 56.88,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-09",
+          "price": 56.89,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-16",
+          "price": 56.95,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-23",
+          "price": 57.05,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-30",
+          "price": 57.12,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-07",
+          "price": 57.3,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-14",
+          "price": 57.45,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-21",
+          "price": 57.59,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-28",
+          "price": 57.83,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-04",
+          "price": 58.04,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-11",
+          "price": 58.19,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-18",
+          "price": 58.75,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-25",
+          "price": 59.33,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-01",
+          "price": 59.49,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-08",
+          "price": 60.12,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-15",
+          "price": 60.58,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-22",
+          "price": 61.31,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-29",
+          "price": 62.12,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-06",
+          "price": 62.57,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-13",
+          "price": 63.09,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-20",
+          "price": 63.55,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-27",
+          "price": 63.75,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-05",
+          "price": 63.29,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-10",
+          "price": 63.22,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-17",
+          "price": 63.07,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-24",
+          "price": 62.71,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-01",
+          "price": 62.59,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-08",
+          "price": 62.46,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-15",
+          "price": 62.17,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-22",
+          "price": 62.06,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-12",
+          "price": 62.09,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-19",
+          "price": 62.19,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-26",
+          "price": 62.22,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-02",
+          "price": 62.35,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-09",
+          "price": 62.44,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-16",
+          "price": 62.49,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-24",
+          "price": 62.59,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-02",
+          "price": 62.68,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-10",
+          "price": 62.73,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-16",
+          "price": 62.88,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-23",
+          "price": 63.21,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-30",
+          "price": 63.46,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-06",
+          "price": 63.6,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-13",
+          "price": 63.68,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-20",
+          "price": 63.77,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-27",
+          "price": 63.81,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-04",
+          "price": 63.92,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-12",
+          "price": 63.98,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-18",
+          "price": 64.08,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-25",
+          "price": 64.32,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-01",
+          "price": 64.57,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-08",
+          "price": 65.66,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-17",
+          "price": 70.26,
+          "source": "benzup"
+        }
+      ],
+      "ai95": [
+        {
+          "date": "2024-11-11",
+          "price": 60.51,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-11-18",
+          "price": 60.78,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-11-25",
+          "price": 61,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-12-02",
+          "price": 61.21,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-12-09",
+          "price": 61.52,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-12-16",
+          "price": 61.8,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-12-23",
+          "price": 61.92,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-01-13",
+          "price": 62.11,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-01-20",
+          "price": 62.08,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-01-27",
+          "price": 62.07,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-02-03",
+          "price": 62.2,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-02-10",
+          "price": 62.24,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-02-17",
+          "price": 62.36,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-02-24",
+          "price": 62.38,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-03",
+          "price": 62.51,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-10",
+          "price": 62.58,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-17",
+          "price": 62.61,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-24",
+          "price": 62.67,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-31",
+          "price": 62.68,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-04-07",
+          "price": 62.82,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-04-14",
+          "price": 62.88,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-04-21",
+          "price": 62.88,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-04-28",
+          "price": 62.92,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-05-05",
+          "price": 63.02,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-05-12",
+          "price": 63.07,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-05-19",
+          "price": 63.18,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-05-26",
+          "price": 63.19,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-02",
+          "price": 63.26,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-09",
+          "price": 63.27,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-16",
+          "price": 63.35,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-23",
+          "price": 63.46,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-30",
+          "price": 63.52,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-07",
+          "price": 63.69,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-14",
+          "price": 63.83,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-21",
+          "price": 64.02,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-28",
+          "price": 64.24,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-04",
+          "price": 64.57,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-11",
+          "price": 64.72,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-18",
+          "price": 65.35,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-25",
+          "price": 65.9,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-01",
+          "price": 66.17,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-08",
+          "price": 66.83,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-15",
+          "price": 67.36,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-22",
+          "price": 68.14,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-29",
+          "price": 68.88,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-06",
+          "price": 69.38,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-13",
+          "price": 69.8,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-20",
+          "price": 69.84,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-27",
+          "price": 70,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-05",
+          "price": 69.51,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-10",
+          "price": 69.46,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-17",
+          "price": 69.34,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-24",
+          "price": 69.03,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-01",
+          "price": 68.95,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-08",
+          "price": 68.9,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-15",
+          "price": 68.75,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-22",
+          "price": 68.71,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-12",
+          "price": 68.91,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-19",
+          "price": 69.01,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-26",
+          "price": 69.07,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-02",
+          "price": 69.21,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-09",
+          "price": 69.28,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-16",
+          "price": 69.35,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-24",
+          "price": 69.46,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-02",
+          "price": 69.54,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-10",
+          "price": 69.63,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-16",
+          "price": 69.75,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-23",
+          "price": 70.04,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-30",
+          "price": 70.31,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-06",
+          "price": 70.44,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-13",
+          "price": 70.5,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-20",
+          "price": 70.59,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-27",
+          "price": 70.62,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-04",
+          "price": 70.75,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-12",
+          "price": 70.89,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-18",
+          "price": 71.01,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-25",
+          "price": 71.34,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-01",
+          "price": 71.57,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-08",
+          "price": 72.66,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-17",
+          "price": 77.19,
+          "source": "benzup"
+        }
+      ],
+      "petrol": [
+        {
+          "date": "2024-11-11",
+          "price": 60.45,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-11-18",
+          "price": 60.77,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-11-25",
+          "price": 60.92,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-12-02",
+          "price": 61.15,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-12-09",
+          "price": 61.52,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-12-16",
+          "price": 61.84,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-12-23",
+          "price": 61.98,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-01-13",
+          "price": 62.51,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-01-20",
+          "price": 62.46,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-01-27",
+          "price": 62.46,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-02-03",
+          "price": 60.13,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-02-10",
+          "price": 60.17,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-02-17",
+          "price": 60.28,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-02-24",
+          "price": 60.3,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-03",
+          "price": 60.43,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-10",
+          "price": 60.5,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-17",
+          "price": 60.52,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-24",
+          "price": 60.56,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-31",
+          "price": 60.57,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-04-07",
+          "price": 60.72,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-04-14",
+          "price": 60.77,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-04-21",
+          "price": 60.77,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-04-28",
+          "price": 60.82,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-05-05",
+          "price": 60.91,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-05-12",
+          "price": 60.96,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-05-19",
+          "price": 61.04,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-05-26",
+          "price": 61.05,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-02",
+          "price": 61.1,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-09",
+          "price": 61.11,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-16",
+          "price": 61.18,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-23",
+          "price": 61.29,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-30",
+          "price": 61.35,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-07",
+          "price": 61.53,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-14",
+          "price": 61.67,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-21",
+          "price": 61.84,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-28",
+          "price": 62.06,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-04",
+          "price": 62.33,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-11",
+          "price": 62.48,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-18",
+          "price": 63.07,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-25",
+          "price": 63.62,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-01",
+          "price": 63.86,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-08",
+          "price": 64.5,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-15",
+          "price": 65.01,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-22",
+          "price": 65.76,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-29",
+          "price": 66.54,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-06",
+          "price": 67.04,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-13",
+          "price": 67.49,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-20",
+          "price": 67.69,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-27",
+          "price": 67.87,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-05",
+          "price": 67.42,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-10",
+          "price": 67.36,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-17",
+          "price": 67.24,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-24",
+          "price": 66.92,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-01",
+          "price": 66.83,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-08",
+          "price": 66.75,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-15",
+          "price": 66.55,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-22",
+          "price": 66.48,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-12",
+          "price": 66.64,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-19",
+          "price": 66.74,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-26",
+          "price": 66.79,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-02",
+          "price": 66.86,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-09",
+          "price": 66.94,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-16",
+          "price": 67,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-24",
+          "price": 67.11,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-02",
+          "price": 67.19,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-10",
+          "price": 67.26,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-16",
+          "price": 67.4,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-23",
+          "price": 67.71,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-30",
+          "price": 67.97,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-06",
+          "price": 68.11,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-13",
+          "price": 68.18,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-20",
+          "price": 68.27,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-27",
+          "price": 68.31,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-04",
+          "price": 68.44,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-12",
+          "price": 68.54,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-18",
+          "price": 68.65,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-25",
+          "price": 68.94,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-01",
+          "price": 69.19,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-08",
+          "price": 70.3,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-17",
+          "price": 73.72,
+          "source": "benzup"
+        }
+      ],
+      "diesel": [
+        {
+          "date": "2024-11-11",
+          "price": 63.71,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-11-18",
+          "price": 64.09,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-11-25",
+          "price": 64.42,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-12-02",
+          "price": 64.65,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-12-09",
+          "price": 64.93,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-12-16",
+          "price": 65.34,
+          "source": "rosstat"
+        },
+        {
+          "date": "2024-12-23",
+          "price": 65.52,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-01-13",
+          "price": 65.96,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-01-20",
+          "price": 65.96,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-01-27",
+          "price": 65.96,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-02-03",
+          "price": 66.08,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-02-10",
+          "price": 66.11,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-02-17",
+          "price": 66.22,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-02-24",
+          "price": 66.25,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-03",
+          "price": 66.25,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-10",
+          "price": 66.26,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-17",
+          "price": 66.22,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-24",
+          "price": 66.26,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-03-31",
+          "price": 66.27,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-04-07",
+          "price": 66.35,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-04-14",
+          "price": 66.39,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-04-21",
+          "price": 66.44,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-04-28",
+          "price": 66.51,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-05-05",
+          "price": 66.54,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-05-12",
+          "price": 66.56,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-05-19",
+          "price": 66.62,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-05-26",
+          "price": 66.62,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-02",
+          "price": 66.66,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-09",
+          "price": 66.71,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-16",
+          "price": 66.72,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-23",
+          "price": 66.72,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-06-30",
+          "price": 66.74,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-07",
+          "price": 66.85,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-14",
+          "price": 66.88,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-21",
+          "price": 66.91,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-07-28",
+          "price": 66.99,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-04",
+          "price": 67,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-11",
+          "price": 67,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-18",
+          "price": 67.12,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-08-25",
+          "price": 67.29,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-01",
+          "price": 67.45,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-08",
+          "price": 67.8,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-15",
+          "price": 68.17,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-22",
+          "price": 68.74,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-09-29",
+          "price": 69.37,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-06",
+          "price": 69.87,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-13",
+          "price": 70.39,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-20",
+          "price": 70.27,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-10-27",
+          "price": 70.31,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-05",
+          "price": 70.51,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-10",
+          "price": 70.54,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-17",
+          "price": 70.65,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-11-24",
+          "price": 70.76,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-01",
+          "price": 70.86,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-08",
+          "price": 70.9,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-15",
+          "price": 71,
+          "source": "rosstat"
+        },
+        {
+          "date": "2025-12-22",
+          "price": 70.97,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-12",
+          "price": 71.7,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-19",
+          "price": 71.84,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-01-26",
+          "price": 71.92,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-02",
+          "price": 71.98,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-09",
+          "price": 72.06,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-16",
+          "price": 72.1,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-02-24",
+          "price": 72.06,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-02",
+          "price": 72.06,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-10",
+          "price": 72.08,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-16",
+          "price": 72.21,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-23",
+          "price": 72.47,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-03-30",
+          "price": 72.63,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-06",
+          "price": 72.83,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-13",
+          "price": 72.94,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-20",
+          "price": 73.03,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-04-27",
+          "price": 73.12,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-04",
+          "price": 73.3,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-12",
+          "price": 73.42,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-18",
+          "price": 73.68,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-05-25",
+          "price": 74.12,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-01",
+          "price": 74.37,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-08",
+          "price": 75.67,
+          "source": "rosstat"
+        },
+        {
+          "date": "2026-06-17",
+          "price": 79.32,
+          "source": "benzup"
+        }
+      ]
+    }
+  }
+}

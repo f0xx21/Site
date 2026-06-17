@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Конвертер валют</title>
   <link rel="icon" href="favicon.png" type="image/png" />
-  <link rel="stylesheet" href="styles.css?v=25" />
+  <link rel="stylesheet" href="styles.css?v=27" />
 </head>
 <body>
   <div class="site-layout">
@@ -36,6 +36,13 @@
           data-section="chat"
         >
           Chat
+        </button>
+        <button
+          type="button"
+          class="nav-item"
+          data-section="fuel"
+        >
+          Цены на топливо
         </button>
       </nav>
     </aside>
@@ -432,6 +439,61 @@
       </section>
 
       <section
+        id="section-fuel"
+        class="page-section"
+        aria-labelledby="fuelHeading"
+        hidden
+      >
+        <main class="content-card content-card--wide fuel-card">
+          <header class="card-header">
+            <h1 id="fuelHeading">Цены на топливо</h1>
+            <p class="subtitle">Ростовская область · динамика цен (руб./литр)</p>
+          </header>
+
+          <div class="fuel-controls" role="group" aria-label="Выбор периода">
+            <button type="button" class="fuel-period-btn is-active" data-period="month">
+              Месяц
+            </button>
+            <button type="button" class="fuel-period-btn" data-period="year">
+              Год
+            </button>
+            <button type="button" class="fuel-period-btn" data-period="threeYears">
+              3 года
+            </button>
+          </div>
+
+          <div class="fuel-chart-wrap" aria-live="polite">
+            <svg
+              id="fuelChart"
+              class="fuel-chart"
+              viewBox="0 0 860 360"
+              role="img"
+              aria-labelledby="fuelChartTitle fuelChartDesc"
+            >
+              <title id="fuelChartTitle">График роста цен на топливо</title>
+              <desc id="fuelChartDesc">Линейный график цен на топливо в Ростовской области</desc>
+            </svg>
+          </div>
+
+          <ul class="fuel-legend" id="fuelLegend" aria-label="Легенда топлива"></ul>
+          <p id="fuelStatus" class="fuel-status" role="status">Загрузка данных…</p>
+          <button type="button" id="fuelRefreshBtn" class="refresh-btn fuel-refresh-btn">
+            Обновить данные
+          </button>
+          <p class="fuel-note">
+            Источники:
+            <a href="https://benzup.ru/index-region" target="_blank" rel="noopener">Benzup / OMT-Consult</a>
+            (ежедневно) и
+            <a href="https://rosstat.gov.ru/central-news" target="_blank" rel="noopener">Росстат</a>
+            (еженедельно). Данные хранятся в Supabase — настройка:
+            <code>supabase-migration-fuel.sql</code>,
+            <code>supabase-fuel-seed.sql</code>,
+            деплой <code>fuel-refresh</code>.
+          </p>
+        </main>
+      </section>
+
+      <section
         id="section-chat"
         class="page-section"
         aria-labelledby="chatSubtitle"
@@ -541,6 +603,7 @@
   <script src="books.js?v=5"></script>
   <script src="app.js?v=5"></script>
   <script src="weather.js?v=6"></script>
+  <script src="fuel.js?v=4"></script>
   <script src="chat.js?v=12"></script>
 </body>
 </html>

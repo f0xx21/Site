@@ -21,6 +21,8 @@ function showSection(sectionId) {
   document.title =
     sectionId === "articles"
       ? "Книги и статьи — Финансы"
+      : sectionId === "fuel"
+        ? "Цены на топливо — Финансы"
       : sectionId === "chat"
         ? "Chat"
         : "Калькулятор — Конвертер валют";
@@ -31,6 +33,10 @@ function showSection(sectionId) {
 
   if (sectionId === "chat" && typeof window.initChat === "function") {
     window.initChat();
+  }
+
+  if (sectionId === "fuel" && typeof window.refreshFuelData === "function") {
+    window.refreshFuelData();
   }
 }
 

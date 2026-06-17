@@ -9,7 +9,7 @@ const output = path.join(__dirname, "..", "supabase-fuel-seed.sql");
 const payload = JSON.parse(fs.readFileSync(input, "utf8"));
 const values = [];
 
-for (const product of ["ai92", "ai95", "petrol", "diesel"]) {
+for (const product of ["ai92", "ai95", "ai100", "petrol", "diesel"]) {
   for (const point of payload.series[product] || []) {
     values.push(
       `(61, '${product}', '${point.date}', ${Number(point.price).toFixed(2)}, '${point.source}')`

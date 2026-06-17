@@ -12,6 +12,7 @@ const ROSTOV_REGION_ID = 61;
 const BENZUP_PRODUCTS = {
   A0920: "ai92",
   A0950: "ai95",
+  A0980: "ai100",
   D0DT0: "diesel",
 };
 
@@ -55,10 +56,12 @@ async function fetchBenzupRostov() {
 }
 
 function rowsToPayload(rows) {
-  const series = { ai92: [], ai95: [], petrol: [], diesel: [] };
+  const series = { ai92: [], ai95: [], ai100: [], petrol: [], diesel: [] };
   let latestAt = null;
 
   for (const row of rows) {
+    if (!series[row.product]) continue;
+
     series[row.product].push({
       date: row.price_date,
       price: Number(row.price),
@@ -82,6 +85,7 @@ function rowsToPayload(rows) {
     stats: {
       ai92: series.ai92.length,
       ai95: series.ai95.length,
+      ai100: series.ai100.length,
       petrol: series.petrol.length,
       diesel: series.diesel.length,
     },

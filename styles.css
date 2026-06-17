@@ -256,7 +256,7 @@ body {
 .fuel-legend {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.5rem;
   margin-top: 1rem;
 }
@@ -321,6 +321,11 @@ body {
   fill: var(--text-secondary);
   font-size: 11px;
   text-anchor: middle;
+}
+
+.fuel-axis-tick {
+  stroke: rgba(139, 156, 179, 0.45);
+  stroke-width: 1;
 }
 
 .fuel-chart-empty {

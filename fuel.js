@@ -7,6 +7,7 @@ const FUEL_PERIOD_BTN_SELECTOR = ".fuel-period-btn";
 const FUEL_TYPES = [
   { id: "ai92", label: "АИ-92", color: "#60a5fa" },
   { id: "ai95", label: "АИ-95", color: "#34d399" },
+  { id: "ai100", label: "АИ-100", color: "#c084fc" },
   { id: "petrol", label: "Бензин (средний)", color: "#f59e0b" },
   { id: "diesel", label: "Дизельное топливо", color: "#f87171" },
 ];
@@ -108,11 +109,80 @@ function formatShortDate(isoDate) {
   }
 }
 
+function formatAxisLabel(isoDate, periodId, isYearBoundary) {
+  try {
+    const date = new Date(`${isoDate}T00:00:00`);
+
+    if (periodId === "month") {
+      return formatShortDate(isoDate);
+    }
+
+    if (periodId === "threeYears" && isYearBoundary) {
+      return String(date.getFullYear());
+    }
+
+    return date.toLocaleDateString("ru-RU", {
+      month: "short",
+      year: "numeric",
+    });
+  } catch {
+    return isoDate;
+  }
+}
+
+function pickAxisLabelIndexes(points, periodId) {
+  const indexes = new Set([0, points.length - 1]);
+
+  if (periodId === "month") {
+    if (points.length > 2) {
+      indexes.add(Math.floor((points.length - 1) / 2));
+    }
+    return [...indexes].sort((a, b) => a - b);
+  }
+
+  const seenYears = new Set();
+
+  points.forEach((point, index) => {
+    const [year, month] = point.date.split("-");
+
+    if (periodId === "threeYears") {
+      if (!seenYears.has(year)) {
+        seenYears.add(year);
+        indexes.add(index);
+      }
+      return;
+    }
+
+    if (periodId === "year") {
+      if (["01", "04", "07", "10"].includes(month)) {
+        indexes.add(index);
+      }
+    }
+  });
+
+  const sorted = [...indexes].sort((a, b) => a - b);
+  const maxLabels = periodId === "year" ? 8 : 6;
+
+  if (sorted.length <= maxLabels) {
+    return sorted;
+  }
+
+  const step = Math.ceil(sorted.length / maxLabels);
+  return sorted.filter((_, index) => index % step === 0 || index === sorted.length - 1);
+}
+
+function isYearBoundary(points, index) {
+  if (index === 0) return true;
+  return points[index].date.slice(0, 4) !== points[index - 1].date.slice(0, 4);
+}
+
 function rowsToPayload(rows) {
-  const series = { ai92: [], ai95: [], petrol: [], diesel: [] };
+  const series = { ai92: [], ai95: [], ai100: [], petrol: [], diesel: [] };
   let latestAt = null;
 
   for (const row of rows) {
+    if (!series[row.product]) continue;
+
     series[row.product].push({
       date: row.price_date,
       price: Number(row.price),
@@ -136,6 +206,7 @@ function rowsToPayload(rows) {
     stats: {
       ai92: series.ai92.length,
       ai95: series.ai95.length,
+      ai100: series.ai100.length,
       petrol: series.petrol.length,
       diesel: series.diesel.length,
     },
@@ -181,23 +252,27 @@ function buildPolyline(values, minValue, maxValue, width, height, padding) {
     .join(" ");
 }
 
-function buildXLabels(points, width, height, padding) {
+function buildXLabels(points, width, height, padding, periodId) {
   if (!points.length) return "";
 
   const chartWidth = width - padding.left - padding.right;
   const step = points.length > 1 ? chartWidth / (points.length - 1) : 0;
-  const labelIndexes = new Set([0, points.length - 1]);
+  const labelIndexes = pickAxisLabelIndexes(points, periodId);
+  const axisY = height - padding.bottom;
 
-  if (points.length > 2) {
-    labelIndexes.add(Math.floor((points.length - 1) / 2));
-  }
-
-  return [...labelIndexes]
-    .sort((a, b) => a - b)
+  return labelIndexes
     .map((index) => {
       const x = padding.left + step * index;
-      const y = height - padding.bottom + 18;
-      return `<text x="${x.toFixed(2)}" y="${y}" class="fuel-axis-label">${formatShortDate(points[index].date)}</text>`;
+      const label = formatAxisLabel(
+        points[index].date,
+        periodId,
+        isYearBoundary(points, index)
+      );
+
+      return `
+        <line x1="${x.toFixed(2)}" y1="${axisY}" x2="${x.toFixed(2)}" y2="${(axisY + 6).toFixed(2)}" class="fuel-axis-tick"></line>
+        <text x="${x.toFixed(2)}" y="${(axisY + 22).toFixed(2)}" class="fuel-axis-label">${label}</text>
+      `;
     })
     .join("");
 }
@@ -226,7 +301,7 @@ function renderFuelChart(periodId) {
 
   const width = 860;
   const height = 360;
-  const padding = { top: 24, right: 20, bottom: 48, left: 46 };
+  const padding = { top: 24, right: 20, bottom: 56, left: 46 };
   const dataset = buildDataset(periodId);
 
   if (!dataset.length) {
@@ -267,7 +342,7 @@ function renderFuelChart(periodId) {
     )
     .join("");
 
-  const xLabels = buildXLabels(timeline, width, height, padding);
+  const xLabels = buildXLabels(timeline, width, height, padding, periodId);
   const selectedPeriodLabel = FUEL_PERIODS[periodId]?.label || FUEL_PERIODS.month.label;
 
   fuelChartEl.innerHTML = `

@@ -1,7 +1,34 @@
+const SECTION_STORAGE_KEY = "activeSection";
+const VALID_SECTIONS = new Set(["calculator", "articles", "chat", "fuel"]);
+
 const navItems = document.querySelectorAll(".nav-item");
 const sections = document.querySelectorAll(".page-section");
 
-function showSection(sectionId) {
+function saveActiveSection(sectionId) {
+  try {
+    localStorage.setItem(SECTION_STORAGE_KEY, sectionId);
+  } catch {
+    // ignore quota / private mode
+  }
+}
+
+function getSavedSection() {
+  try {
+    const saved = localStorage.getItem(SECTION_STORAGE_KEY);
+    if (saved && VALID_SECTIONS.has(saved)) return saved;
+  } catch {
+    // ignore
+  }
+  return "calculator";
+}
+
+function showSection(sectionId, options = {}) {
+  const { persist = true } = options;
+
+  if (!VALID_SECTIONS.has(sectionId)) {
+    sectionId = "calculator";
+  }
+
   sections.forEach((section) => {
     const isActive = section.id === `section-${sectionId}`;
     section.classList.toggle("is-active", isActive);
@@ -38,6 +65,10 @@ function showSection(sectionId) {
   if (sectionId === "fuel" && typeof window.refreshFuelData === "function") {
     window.refreshFuelData();
   }
+
+  if (persist) {
+    saveActiveSection(sectionId);
+  }
 }
 
 window.goToSection = showSection;
@@ -47,3 +78,5 @@ navItems.forEach((item) => {
     showSection(item.dataset.section);
   });
 });
+
+showSection(getSavedSection(), { persist: false });

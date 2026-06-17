@@ -109,7 +109,22 @@ function formatShortDate(isoDate) {
   }
 }
 
-function formatAxisLabel(isoDate, periodId, isYearBoundary) {
+function formatMonthShort(isoDate) {
+  try {
+    return new Date(`${isoDate}T00:00:00`)
+      .toLocaleDateString("ru-RU", { month: "short" })
+      .replace(/\s*г\.?\s*$/i, "")
+      .trim();
+  } catch {
+    return isoDate.slice(5, 7);
+  }
+}
+
+function getTimelineYears(points) {
+  return new Set(points.map((point) => point.date.slice(0, 4)));
+}
+
+function formatAxisLabel(isoDate, periodId, points) {
   try {
     const date = new Date(`${isoDate}T00:00:00`);
 
@@ -117,67 +132,120 @@ function formatAxisLabel(isoDate, periodId, isYearBoundary) {
       return formatShortDate(isoDate);
     }
 
-    if (periodId === "threeYears" && isYearBoundary) {
+    if (periodId === "threeYears") {
       return String(date.getFullYear());
     }
 
-    return date.toLocaleDateString("ru-RU", {
-      month: "short",
-      year: "numeric",
-    });
+    if (periodId === "year") {
+      const month = formatMonthShort(isoDate);
+      if (getTimelineYears(points).size > 1) {
+        const yearSuffix = String(date.getFullYear()).slice(-2);
+        return `${month} '${yearSuffix}`;
+      }
+      return month;
+    }
+
+    return formatShortDate(isoDate);
   } catch {
     return isoDate;
   }
 }
 
-function pickAxisLabelIndexes(points, periodId) {
-  const indexes = new Set([0, points.length - 1]);
+const AXIS_TARGET_LABELS = {
+  week: 7,
+  month: 5,
+  year: 6,
+  threeYears: 4,
+};
 
-  if (periodId === "week") {
-    return points.map((_, index) => index);
+const AXIS_MIN_LABEL_GAP_PX = 56;
+
+function evenlySpacedIndexes(length, count) {
+  if (length <= 0) return [];
+  if (length === 1) return [0];
+
+  const target = Math.min(count, length);
+  const indexes = new Set();
+
+  for (let i = 0; i < target; i++) {
+    indexes.add(Math.round((i / (target - 1)) * (length - 1)));
   }
 
-  if (periodId === "month") {
-    if (points.length > 2) {
-      indexes.add(Math.floor((points.length - 1) / 2));
-    }
-    return [...indexes].sort((a, b) => a - b);
-  }
-
-  const seenYears = new Set();
-
-  points.forEach((point, index) => {
-    const [year, month] = point.date.split("-");
-
-    if (periodId === "threeYears") {
-      if (!seenYears.has(year)) {
-        seenYears.add(year);
-        indexes.add(index);
-      }
-      return;
-    }
-
-    if (periodId === "year") {
-      if (["01", "04", "07", "10"].includes(month)) {
-        indexes.add(index);
-      }
-    }
-  });
-
-  const sorted = [...indexes].sort((a, b) => a - b);
-  const maxLabels = periodId === "year" ? 8 : 6;
-
-  if (sorted.length <= maxLabels) {
-    return sorted;
-  }
-
-  const step = Math.ceil(sorted.length / maxLabels);
-  return sorted.filter((_, index) => index % step === 0 || index === sorted.length - 1);
+  return [...indexes].sort((a, b) => a - b);
 }
 
-function isYearBoundary(points, index) {
-  if (index === 0) return true;
-  return points[index].date.slice(0, 4) !== points[index - 1].date.slice(0, 4);
+function pickBoundaryIndexes(points, keyFn) {
+  const indexes = [];
+  const seen = new Set();
+
+  points.forEach((point, index) => {
+    const key = keyFn(point.date);
+    if (seen.has(key)) return;
+    seen.add(key);
+    indexes.push(index);
+  });
+
+  return indexes;
+}
+
+function thinAxisLabelIndexes(points, indexes, periodId, chartWidth) {
+  if (!indexes.length) return [];
+
+  const step = points.length > 1 ? chartWidth / (points.length - 1) : chartWidth;
+  const result = [];
+
+  for (const index of indexes) {
+    const label = formatAxisLabel(points[index].date, periodId, points);
+    const x = step * index;
+    const isLast = index === points.length - 1;
+
+    if (!result.length) {
+      result.push({ index, label, x });
+      continue;
+    }
+
+    const prev = result[result.length - 1];
+
+    if (prev.label === label) {
+      if (isLast) {
+        result[result.length - 1] = { index, label, x };
+      }
+      continue;
+    }
+
+    if (x - prev.x >= AXIS_MIN_LABEL_GAP_PX || isLast) {
+      if (isLast && x - prev.x < AXIS_MIN_LABEL_GAP_PX) {
+        result[result.length - 1] = { index, label, x };
+      } else {
+        result.push({ index, label, x });
+      }
+    }
+  }
+
+  return result.map((item) => item.index);
+}
+
+function pickAxisLabelIndexes(points, periodId, chartWidth) {
+  const target = AXIS_TARGET_LABELS[periodId] ?? 5;
+
+  if (periodId === "threeYears") {
+    const yearStarts = pickBoundaryIndexes(points, (date) => date.slice(0, 4));
+    const spaced = evenlySpacedIndexes(yearStarts.length, target).map(
+      (i) => yearStarts[i]
+    );
+    return thinAxisLabelIndexes(points, spaced, periodId, chartWidth);
+  }
+
+  if (periodId === "year") {
+    const monthStarts = pickBoundaryIndexes(points, (date) => date.slice(0, 7));
+    const spaced = evenlySpacedIndexes(monthStarts.length, target).map(
+      (i) => monthStarts[i]
+    );
+    return thinAxisLabelIndexes(points, spaced, periodId, chartWidth);
+  }
+
+  const spaced = evenlySpacedIndexes(points.length, target);
+  return thinAxisLabelIndexes(points, spaced, periodId, chartWidth);
 }
 
 function rowsToPayload(rows) {
@@ -260,17 +328,13 @@ function buildXLabels(points, width, height, padding, periodId) {
 
   const chartWidth = width - padding.left - padding.right;
   const step = points.length > 1 ? chartWidth / (points.length - 1) : 0;
-  const labelIndexes = pickAxisLabelIndexes(points, periodId);
+  const labelIndexes = pickAxisLabelIndexes(points, periodId, chartWidth);
   const axisY = height - padding.bottom;
 
   return labelIndexes
     .map((index) => {
       const x = padding.left + step * index;
-      const label = formatAxisLabel(
-        points[index].date,
-        periodId,
-        isYearBoundary(points, index)
-      );
+      const label = formatAxisLabel(points[index].date, periodId, points);
 
       return `
         <line x1="${x.toFixed(2)}" y1="${axisY}" x2="${x.toFixed(2)}" y2="${(axisY + 6).toFixed(2)}" class="fuel-axis-tick"></line>

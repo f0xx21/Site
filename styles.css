@@ -334,10 +334,6 @@ body {
   text-anchor: middle;
 }
 
-.fuel-refresh-btn {
-  margin-top: 0.25rem;
-}
-
 .fuel-note a {
   color: var(--accent);
 }
@@ -934,6 +930,15 @@ body {
 .refresh-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+.refresh-btn.fuel-refresh-btn {
+  display: block;
+  width: fit-content;
+  margin: 0.5rem auto 0;
+  padding: 0.45rem 0.95rem;
+  font-size: 0.8125rem;
+  border-radius: 999px;
 }
 
 .visually-hidden {

@@ -12,7 +12,6 @@ const FUEL_TYPES = [
 ];
 
 const FUEL_PERIODS = {
-  week: { label: "Неделя", days: 7 },
   month: { label: "Месяц", days: 31 },
   year: { label: "Год", days: 365 },
   threeYears: { label: "3 года", days: 3 * 365 },
@@ -109,15 +108,24 @@ function formatShortDate(isoDate) {
   }
 }
 
-function formatMonthShort(isoDate) {
-  try {
-    return new Date(`${isoDate}T00:00:00`)
-      .toLocaleDateString("ru-RU", { month: "short" })
-      .replace(/\s*г\.?\s*$/i, "")
-      .trim();
-  } catch {
-    return isoDate.slice(5, 7);
-  }
+const MONTH_ABBR_RU = [
+  "янв",
+  "фев",
+  "мар",
+  "апр",
+  "май",
+  "июн",
+  "июл",
+  "авг",
+  "сен",
+  "окт",
+  "ноя",
+  "дек",
+];
+
+function formatMonthAbbr(isoDate) {
+  const monthIndex = Number(isoDate.slice(5, 7)) - 1;
+  return MONTH_ABBR_RU[monthIndex] ?? isoDate.slice(5, 7);
 }
 
 function getTimelineYears(points) {
@@ -128,7 +136,7 @@ function formatAxisLabel(isoDate, periodId, points) {
   try {
     const date = new Date(`${isoDate}T00:00:00`);
 
-    if (periodId === "week" || periodId === "month") {
+    if (periodId === "month") {
       return formatShortDate(isoDate);
     }
 
@@ -137,7 +145,7 @@ function formatAxisLabel(isoDate, periodId, points) {
     }
 
     if (periodId === "year") {
-      const month = formatMonthShort(isoDate);
+      const month = formatMonthAbbr(isoDate);
       if (getTimelineYears(points).size > 1) {
         const yearSuffix = String(date.getFullYear()).slice(-2);
         return `${month} '${yearSuffix}`;
@@ -152,7 +160,6 @@ function formatAxisLabel(isoDate, periodId, points) {
 }
 
 const AXIS_TARGET_LABELS = {
-  week: 7,
   month: 5,
   year: 6,
   threeYears: 4,
@@ -237,11 +244,7 @@ function pickAxisLabelIndexes(points, periodId, chartWidth) {
   }
 
   if (periodId === "year") {
-    const monthStarts = pickBoundaryIndexes(points, (date) => date.slice(0, 7));
-    const spaced = evenlySpacedIndexes(monthStarts.length, target).map(
-      (i) => monthStarts[i]
-    );
-    return thinAxisLabelIndexes(points, spaced, periodId, chartWidth);
+    return evenlySpacedIndexes(points.length, target);
   }
 
   const spaced = evenlySpacedIndexes(points.length, target);

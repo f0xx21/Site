@@ -1,6 +1,6 @@
-const CACHE_KEY = "interestRateData";
-const CACHE_TIME_KEY = "interestRateFetchedAt";
-const CACHE_TTL_MS = 60 * 60 * 1000;
+const RATE_CACHE_KEY = "interestRateData";
+const RATE_CACHE_TIME_KEY = "interestRateFetchedAt";
+const RATE_CACHE_TTL_MS = 60 * 60 * 1000;
 const STATIC_DATA_URL = "data/interest-rates.json";
 const TE_BASE_URL = "https://ru.tradingeconomics.com";
 const EDGE_TIMEOUT_MS = 8000;
@@ -53,14 +53,14 @@ function setRateStatus(message, type = "") {
 
 function readCache() {
   try {
-    const cached = localStorage.getItem(CACHE_KEY);
-    const fetchedAt = localStorage.getItem(CACHE_TIME_KEY);
+    const cached = localStorage.getItem(RATE_CACHE_KEY);
+    const fetchedAt = localStorage.getItem(RATE_CACHE_TIME_KEY);
     if (!cached || !fetchedAt) return null;
 
     const age = Date.now() - Number(fetchedAt);
     return {
       payload: JSON.parse(cached),
-      expired: age >= CACHE_TTL_MS,
+      expired: age >= RATE_CACHE_TTL_MS,
     };
   } catch {
     return null;
@@ -69,8 +69,8 @@ function readCache() {
 
 function writeCache(payload) {
   try {
-    localStorage.setItem(CACHE_KEY, JSON.stringify(payload));
-    localStorage.setItem(CACHE_TIME_KEY, String(Date.now()));
+    localStorage.setItem(RATE_CACHE_KEY, JSON.stringify(payload));
+    localStorage.setItem(RATE_CACHE_TIME_KEY, String(Date.now()));
   } catch {
     // ignore quota / private mode
   }

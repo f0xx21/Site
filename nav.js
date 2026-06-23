@@ -1,5 +1,5 @@
 const SECTION_STORAGE_KEY = "activeSection";
-const VALID_SECTIONS = new Set(["calculator", "articles", "chat", "fuel"]);
+const VALID_SECTIONS = new Set(["calculator", "articles", "chat", "fuel", "rates"]);
 
 const navItems = document.querySelectorAll(".nav-item");
 const sections = document.querySelectorAll(".page-section");
@@ -50,6 +50,8 @@ function showSection(sectionId, options = {}) {
       ? "Книги и статьи — Финансы"
       : sectionId === "fuel"
         ? "Цены на топливо — Финансы"
+      : sectionId === "rates"
+        ? "Ключевая ставка — Финансы"
       : sectionId === "chat"
         ? "Chat"
         : "Калькулятор — Конвертер валют";
@@ -64,6 +66,10 @@ function showSection(sectionId, options = {}) {
 
   if (sectionId === "fuel" && typeof window.refreshFuelData === "function") {
     window.refreshFuelData();
+  }
+
+  if (sectionId === "rates" && typeof window.refreshRateData === "function") {
+    window.refreshRateData();
   }
 
   if (persist) {

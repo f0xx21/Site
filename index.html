@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Конвертер валют</title>
   <link rel="icon" href="favicon.png" type="image/png" />
-  <link rel="stylesheet" href="styles.css?v=28" />
+  <link rel="stylesheet" href="styles.css?v=29" />
 </head>
 <body>
   <div class="site-layout">
@@ -43,6 +43,13 @@
           data-section="fuel"
         >
           Цены на топливо
+        </button>
+        <button
+          type="button"
+          class="nav-item"
+          data-section="rates"
+        >
+          Ключевая ставка
         </button>
       </nav>
     </aside>
@@ -494,6 +501,81 @@
       </section>
 
       <section
+        id="section-rates"
+        class="page-section"
+        aria-labelledby="ratesHeading"
+        hidden
+      >
+        <main class="content-card content-card--wide rate-card">
+          <header class="card-header">
+            <h1 id="ratesHeading">Ключевая ставка</h1>
+            <p class="subtitle">Процентные ставки центральных банков по странам</p>
+          </header>
+
+          <div class="rate-toolbar">
+            <label class="rate-search-wrap">
+              <span class="rate-search-label">Поиск страны</span>
+              <input
+                type="search"
+                id="rateSearch"
+                class="rate-search-input"
+                placeholder="Например: Россия"
+                autocomplete="off"
+              />
+            </label>
+          </div>
+
+          <div class="rate-table-wrap" aria-live="polite">
+            <table class="rate-table" id="rateTable">
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <button type="button" class="rate-sort-btn" data-rate-sort="country">
+                      Страна
+                    </button>
+                  </th>
+                  <th scope="col">
+                    <button type="button" class="rate-sort-btn is-active" data-rate-sort="latest" aria-sort="ascending">
+                      Последний
+                    </button>
+                  </th>
+                  <th scope="col">
+                    <button type="button" class="rate-sort-btn" data-rate-sort="previous">
+                      Предыдущий
+                    </button>
+                  </th>
+                  <th scope="col" class="rate-col-period">
+                    <button type="button" class="rate-sort-btn" data-rate-sort="period">
+                      Период
+                    </button>
+                  </th>
+                  <th scope="col" class="rate-col-unit">Ед.</th>
+                  <th scope="col" class="rate-col-next">
+                    <button type="button" class="rate-sort-btn" data-rate-sort="nextRelease">
+                      Следующий выпуск
+                    </button>
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="rateTableBody"></tbody>
+            </table>
+          </div>
+
+          <p id="rateStatus" class="rate-status" role="status">Загрузка данных…</p>
+          <button type="button" id="rateRefreshBtn" class="refresh-btn rate-refresh-btn">
+            Обновить данные
+          </button>
+          <p class="rate-note">
+            Источник:
+            <a href="https://ru.tradingeconomics.com/country-list/interest-rate" target="_blank" rel="noopener">Trading Economics</a>.
+            Для онлайн-обновления разверните Edge Function
+            <code>interest-rate-refresh</code>
+            или выполните <code>node scripts/sync-interest-rates.mjs</code>.
+          </p>
+        </main>
+      </section>
+
+      <section
         id="section-chat"
         class="page-section"
         aria-labelledby="chatSubtitle"
@@ -599,11 +681,12 @@
   <script src="https://cdn.jsdelivr.net/npm/epubjs@0.3.93/dist/epub.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <script src="config.js"></script>
-  <script src="nav.js?v=6"></script>
+  <script src="nav.js?v=7"></script>
   <script src="books.js?v=5"></script>
   <script src="app.js?v=5"></script>
   <script src="weather.js?v=6"></script>
   <script src="fuel.js?v=9"></script>
+  <script src="interest-rate.js?v=1"></script>
   <script src="chat.js?v=12"></script>
 </body>
 </html>

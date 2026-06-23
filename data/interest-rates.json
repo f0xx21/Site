@@ -1,0 +1,1656 @@
+{
+  "updatedAt": "2026-06-23T07:51:27.836Z",
+  "source": "https://ru.tradingeconomics.com/country-list/interest-rate",
+  "rows": [
+    {
+      "url": "/venezuela/interest-rate",
+      "country": "Венесуэла",
+      "iso": "VEN",
+      "latest": "59.04",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/turkey/interest-rate",
+      "country": "Турция",
+      "iso": "TUR",
+      "latest": "37",
+      "previous": "37",
+      "period": "2026-06",
+      "unit": "%",
+      "nextRelease": "2026/07/23"
+    },
+    {
+      "url": "/zimbabwe/interest-rate",
+      "country": "Зимбабве",
+      "iso": "ZWE",
+      "latest": "30",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/argentina/interest-rate",
+      "country": "Аргентина",
+      "iso": "ARG",
+      "latest": "29",
+      "previous": "29",
+      "period": "2026-05",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/nigeria/interest-rate",
+      "country": "Нигерия",
+      "iso": "NGA",
+      "latest": "26.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/malawi/interest-rate",
+      "country": "Малави",
+      "iso": "MWI",
+      "latest": "24",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/iran/interest-rate",
+      "country": "Иран",
+      "iso": "IRN",
+      "latest": "23",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/lebanon/interest-rate",
+      "country": "Ливан",
+      "iso": "LBN",
+      "latest": "20",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/egypt/interest-rate",
+      "country": "Египет",
+      "iso": "EGY",
+      "latest": "19",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/angola/interest-rate",
+      "country": "Ангола",
+      "iso": "AGO",
+      "latest": "17",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/haiti/interest-rate",
+      "country": "Гаити",
+      "iso": "HTI",
+      "latest": "17",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/kazakhstan/interest-rate",
+      "country": "Казахстан",
+      "iso": "KAZ",
+      "latest": "17",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/sierra-leone/interest-rate",
+      "country": "Сьерра-Леоне",
+      "iso": "SLE",
+      "latest": "16.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/liberia/interest-rate",
+      "country": "Либерия",
+      "iso": "LBR",
+      "latest": "16.25",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/ethiopia/interest-rate",
+      "country": "Эфиопия",
+      "iso": "ETH",
+      "latest": "15",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/ukraine/interest-rate",
+      "country": "Украина",
+      "iso": "UKR",
+      "latest": "15",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/brazil/interest-rate",
+      "country": "Бразилия",
+      "iso": "BRA",
+      "latest": "14.25",
+      "previous": "14.5",
+      "period": "2026-06",
+      "unit": "%",
+      "nextRelease": "2026/06/29"
+    },
+    {
+      "url": "/russia/interest-rate",
+      "country": "Россия",
+      "iso": "RUS",
+      "latest": "14.25",
+      "previous": "14.5",
+      "period": "2026-06",
+      "unit": "%",
+      "nextRelease": "2026/07/01"
+    },
+    {
+      "url": "/gambia/interest-rate",
+      "country": "Гамбия",
+      "iso": "GMB",
+      "latest": "14",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/ghana/interest-rate",
+      "country": "Гана",
+      "iso": "GHA",
+      "latest": "14",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/uzbekistan/interest-rate",
+      "country": "Узбекистан",
+      "iso": "UZB",
+      "latest": "14",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/congo/interest-rate",
+      "country": "Конго",
+      "iso": "COD",
+      "latest": "13.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/zambia/interest-rate",
+      "country": "Замбия",
+      "iso": "ZMB",
+      "latest": "13.25",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/south-sudan/interest-rate",
+      "country": "Южный Судан",
+      "iso": "SSD",
+      "latest": "13",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/kyrgyzstan/interest-rate",
+      "country": "Киргизия",
+      "iso": "KGZ",
+      "latest": "12",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/madagascar/interest-rate",
+      "country": "Мадагаскар",
+      "iso": "MDG",
+      "latest": "12",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/mongolia/interest-rate",
+      "country": "Монголия",
+      "iso": "MNG",
+      "latest": "12",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/pakistan/interest-rate",
+      "country": "Пакистан",
+      "iso": "PAK",
+      "latest": "11.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/colombia/interest-rate",
+      "country": "Колумбия",
+      "iso": "COL",
+      "latest": "11.25",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/bangladesh/interest-rate",
+      "country": "Бангладеш",
+      "iso": "BGD",
+      "latest": "10",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/burundi/interest-rate",
+      "country": "Бурунди",
+      "iso": "BDI",
+      "latest": "10",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/sao-tome-and-principe/interest-rate",
+      "country": "Сан-Томе и Принсипи",
+      "iso": "STP",
+      "latest": "10",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/suriname/interest-rate",
+      "country": "Суринам",
+      "iso": "SUR",
+      "latest": "10",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/belarus/interest-rate",
+      "country": "Беларусь",
+      "iso": "BLR",
+      "latest": "9.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/uganda/interest-rate",
+      "country": "Уганда",
+      "iso": "UGA",
+      "latest": "9.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/guinea/interest-rate",
+      "country": "Гвинея",
+      "iso": "GIN",
+      "latest": "9.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/mozambique/interest-rate",
+      "country": "Мозамбик",
+      "iso": "MOZ",
+      "latest": "9.25",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/myanmar/interest-rate",
+      "country": "Мьянма",
+      "iso": "MMR",
+      "latest": "9",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/kenya/interest-rate",
+      "country": "Кения",
+      "iso": "KEN",
+      "latest": "8.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/sri-lanka/interest-rate",
+      "country": "Шри Ланка",
+      "iso": "LKA",
+      "latest": "8.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/georgia/interest-rate",
+      "country": "Грузия",
+      "iso": "GEO",
+      "latest": "8.25",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/rwanda/interest-rate",
+      "country": "Руанда",
+      "iso": "RWA",
+      "latest": "8.25",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/laos/interest-rate",
+      "country": "Лаос",
+      "iso": "LAO",
+      "latest": "8",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/iceland/interest-rate",
+      "country": "Исландия",
+      "iso": "ISL",
+      "latest": "7.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/maldives/interest-rate",
+      "country": "Мальдивы",
+      "iso": "MDV",
+      "latest": "7",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/moldova/interest-rate",
+      "country": "Молдова",
+      "iso": "MDA",
+      "latest": "7",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/south-africa/interest-rate",
+      "country": "ЮАР",
+      "iso": "ZAF",
+      "latest": "7",
+      "previous": "6.75",
+      "period": "2026-05",
+      "unit": "%",
+      "nextRelease": "2026/07/23"
+    },
+    {
+      "url": "/tajikistan/interest-rate",
+      "country": "Таджикистан",
+      "iso": "TJK",
+      "latest": "7",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/tunisia/interest-rate",
+      "country": "Тунис",
+      "iso": "TUN",
+      "latest": "7",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/ecuador/interest-rate",
+      "country": "Эквадор",
+      "iso": "ECU",
+      "latest": "6.97",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/lesotho/interest-rate",
+      "country": "Лесото",
+      "iso": "LSO",
+      "latest": "6.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/namibia/interest-rate",
+      "country": "Намибия",
+      "iso": "NAM",
+      "latest": "6.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/swaziland/interest-rate",
+      "country": "Свазиленд",
+      "iso": "SWZ",
+      "latest": "6.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/armenia/interest-rate",
+      "country": "Армения",
+      "iso": "ARM",
+      "latest": "6.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/azerbaijan/interest-rate",
+      "country": "Азербайджан",
+      "iso": "AZE",
+      "latest": "6.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/mexico/interest-rate",
+      "country": "Мексика",
+      "iso": "MEX",
+      "latest": "6.5",
+      "previous": "6.75",
+      "period": "2026-05",
+      "unit": "%",
+      "nextRelease": "2026/06/25"
+    },
+    {
+      "url": "/romania/interest-rate",
+      "country": "Румыния",
+      "iso": "ROU",
+      "latest": "6.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/bolivia/interest-rate",
+      "country": "Боливия",
+      "iso": "BOL",
+      "latest": "6.45",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/hungary/interest-rate",
+      "country": "Венгрия",
+      "iso": "HUN",
+      "latest": "6.25",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/mauritania/interest-rate",
+      "country": "Мавритания",
+      "iso": "MRT",
+      "latest": "6",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/honduras/interest-rate",
+      "country": "Гондурас",
+      "iso": "HND",
+      "latest": "5.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/indonesia/interest-rate",
+      "country": "Индонезия",
+      "iso": "IDN",
+      "latest": "5.75",
+      "previous": "5.5",
+      "period": "2026-06",
+      "unit": "%",
+      "nextRelease": "2026/07/22"
+    },
+    {
+      "url": "/jordan/interest-rate",
+      "country": "Иордания",
+      "iso": "JOR",
+      "latest": "5.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/nepal/interest-rate",
+      "country": "Непал",
+      "iso": "NPL",
+      "latest": "5.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/nicaragua/interest-rate",
+      "country": "Никарагуа",
+      "iso": "NIC",
+      "latest": "5.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/serbia/interest-rate",
+      "country": "Сербии",
+      "iso": "SRB",
+      "latest": "5.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/tanzania/interest-rate",
+      "country": "Танзания",
+      "iso": "TZA",
+      "latest": "5.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/uruguay/interest-rate",
+      "country": "Уругвай",
+      "iso": "URY",
+      "latest": "5.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/bhutan/interest-rate",
+      "country": "Бутан",
+      "iso": "BTN",
+      "latest": "5.72",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/botswana/interest-rate",
+      "country": "Ботсвана",
+      "iso": "BWA",
+      "latest": "5.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/brunei/interest-rate",
+      "country": "Бруней",
+      "iso": "BRN",
+      "latest": "5.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/iraq/interest-rate",
+      "country": "Ирак",
+      "iso": "IRQ",
+      "latest": "5.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/jamaica/interest-rate",
+      "country": "Ямайка",
+      "iso": "JAM",
+      "latest": "5.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/paraguay/interest-rate",
+      "country": "Парагвай",
+      "iso": "PRY",
+      "latest": "5.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/dominican-republic/interest-rate",
+      "country": "Доминиканская Республика",
+      "iso": "DOM",
+      "latest": "5.25",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/india/interest-rate",
+      "country": "Индия",
+      "iso": "IND",
+      "latest": "5.25",
+      "previous": "5.25",
+      "period": "2026-06",
+      "unit": "%",
+      "nextRelease": "2026/08/05"
+    },
+    {
+      "url": "/benin/interest-rate",
+      "country": "Бенин",
+      "iso": "BEN",
+      "latest": "5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/burkina-faso/interest-rate",
+      "country": "Буркина-Фасо",
+      "iso": "BFA",
+      "latest": "5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/guinea-bissau/interest-rate",
+      "country": "Гвинея-Бисау",
+      "iso": "GNB",
+      "latest": "5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/guyana/interest-rate",
+      "country": "Гайана",
+      "iso": "GUY",
+      "latest": "5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/ivory-coast/interest-rate",
+      "country": "Берег Слоновой Кости",
+      "iso": "CIV",
+      "latest": "5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/mali/interest-rate",
+      "country": "Мали",
+      "iso": "MLI",
+      "latest": "5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/niger/interest-rate",
+      "country": "Нигер",
+      "iso": "NER",
+      "latest": "5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/papua-new-guinea/interest-rate",
+      "country": "Папуа-Новая Гвинея",
+      "iso": "PNG",
+      "latest": "5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/senegal/interest-rate",
+      "country": "Сенегал",
+      "iso": "SEN",
+      "latest": "5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/togo/interest-rate",
+      "country": "Того",
+      "iso": "TGO",
+      "latest": "5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/cameroon/interest-rate",
+      "country": "Камерун",
+      "iso": "CMR",
+      "latest": "4.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/central-african-republic/interest-rate",
+      "country": "Центрально-Африканская республика",
+      "iso": "CAF",
+      "latest": "4.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/chad/interest-rate",
+      "country": "Чад",
+      "iso": "TCD",
+      "latest": "4.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/equatorial-guinea/interest-rate",
+      "country": "Экваториальная Гвинея",
+      "iso": "GNQ",
+      "latest": "4.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/gabon/interest-rate",
+      "country": "Габон",
+      "iso": "GAB",
+      "latest": "4.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/mauritius/interest-rate",
+      "country": "Маврикий",
+      "iso": "MUS",
+      "latest": "4.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/philippines/interest-rate",
+      "country": "Филиппины",
+      "iso": "PHL",
+      "latest": "4.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/republic-of-the-congo/interest-rate",
+      "country": "Республике Конго",
+      "iso": "COG",
+      "latest": "4.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/el-salvador/interest-rate",
+      "country": "Сальвадор",
+      "iso": "SLV",
+      "latest": "4.64",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/bahrain/interest-rate",
+      "country": "Бахрейн",
+      "iso": "BHR",
+      "latest": "4.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/chile/interest-rate",
+      "country": "Чили",
+      "iso": "CHL",
+      "latest": "4.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/vietnam/interest-rate",
+      "country": "Вьетнам",
+      "iso": "VNM",
+      "latest": "4.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/australia/interest-rate",
+      "country": "Австралия",
+      "iso": "AUS",
+      "latest": "4.35",
+      "previous": "4.35",
+      "period": "2026-06",
+      "unit": "%",
+      "nextRelease": "2026/08/11"
+    },
+    {
+      "url": "/qatar/interest-rate",
+      "country": "Катар",
+      "iso": "QAT",
+      "latest": "4.35",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/macedonia/interest-rate",
+      "country": "Македония",
+      "iso": "MKD",
+      "latest": "4.25",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/norway/interest-rate",
+      "country": "Норвегия",
+      "iso": "NOR",
+      "latest": "4.25",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/oman/interest-rate",
+      "country": "Оман",
+      "iso": "OMN",
+      "latest": "4.25",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/peru/interest-rate",
+      "country": "Перу",
+      "iso": "PER",
+      "latest": "4.25",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/saudi-arabia/interest-rate",
+      "country": "Саудовская Аравия",
+      "iso": "SAU",
+      "latest": "4.25",
+      "previous": "4.25",
+      "period": "2026-06",
+      "unit": "%",
+      "nextRelease": "2025/12/10"
+    },
+    {
+      "url": "/bahamas/interest-rate",
+      "country": "Багамские острова",
+      "iso": "BHS",
+      "latest": "4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/hong-kong/interest-rate",
+      "country": "Гонконг",
+      "iso": "HKG",
+      "latest": "4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/macau/interest-rate",
+      "country": "Макао",
+      "iso": "MAC",
+      "latest": "4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/bosnia-and-herzegovina/interest-rate",
+      "country": "Босния и Герцеговина",
+      "iso": "BIH",
+      "latest": "3.76",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/czech-republic/interest-rate",
+      "country": "Чешская республика",
+      "iso": "CZE",
+      "latest": "3.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/israel/interest-rate",
+      "country": "Израиль",
+      "iso": "ISR",
+      "latest": "3.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/poland/interest-rate",
+      "country": "Польша",
+      "iso": "POL",
+      "latest": "3.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/united-kingdom/interest-rate",
+      "country": "Великобритания",
+      "iso": "GBR",
+      "latest": "3.75",
+      "previous": "3.75",
+      "period": "2026-06",
+      "unit": "%",
+      "nextRelease": "2026/07/30"
+    },
+    {
+      "url": "/united-states/interest-rate",
+      "country": "Соединенные Штаты",
+      "iso": "USA",
+      "latest": "3.75",
+      "previous": "3.75",
+      "period": "2026-06",
+      "unit": "%",
+      "nextRelease": "2026/06/24"
+    },
+    {
+      "url": "/united-arab-emirates/interest-rate",
+      "country": "Объединенные Арабские Эмираты",
+      "iso": "ARE",
+      "latest": "3.65",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/guatemala/interest-rate",
+      "country": "Гватемала",
+      "iso": "GTM",
+      "latest": "3.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/kuwait/interest-rate",
+      "country": "Кувейт",
+      "iso": "KWT",
+      "latest": "3.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/trinidad-and-tobago/interest-rate",
+      "country": "Тринидад и Тобаго",
+      "iso": "TTO",
+      "latest": "3.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/costa-rica/interest-rate",
+      "country": "Коста-Рика",
+      "iso": "CRI",
+      "latest": "3.25",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/china/interest-rate",
+      "country": "Китай",
+      "iso": "CHN",
+      "latest": "3",
+      "previous": "3",
+      "period": "2026-06",
+      "unit": "%",
+      "nextRelease": "2026/07/20"
+    },
+    {
+      "url": "/libya/interest-rate",
+      "country": "Ливия",
+      "iso": "LBY",
+      "latest": "3",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/malaysia/interest-rate",
+      "country": "Малайзия",
+      "iso": "MYS",
+      "latest": "2.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/new-caledonia/interest-rate",
+      "country": "Новая Каледония",
+      "iso": "NCL",
+      "latest": "2.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/albania/interest-rate",
+      "country": "Албания",
+      "iso": "ALB",
+      "latest": "2.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/algeria/interest-rate",
+      "country": "Алжир",
+      "iso": "DZA",
+      "latest": "2.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/cape-verde/interest-rate",
+      "country": "Кабо-Верде",
+      "iso": "CPV",
+      "latest": "2.5",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/south-korea/interest-rate",
+      "country": "Южная Корея",
+      "iso": "KOR",
+      "latest": "2.5",
+      "previous": "2.5",
+      "period": "2026-05",
+      "unit": "%",
+      "nextRelease": "2026/07/16"
+    },
+    {
+      "url": "/austria/interest-rate",
+      "country": "Австрия",
+      "iso": "AUT",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/belgium/interest-rate",
+      "country": "Бельгия",
+      "iso": "BEL",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/bulgaria/interest-rate",
+      "country": "Болгария",
+      "iso": "BGR",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/croatia/interest-rate",
+      "country": "Хорватия",
+      "iso": "HRV",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/cyprus/interest-rate",
+      "country": "Кипр",
+      "iso": "CYP",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/estonia/interest-rate",
+      "country": "Эстония",
+      "iso": "EST",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/euro-area/interest-rate",
+      "country": "Зона евро",
+      "iso": "",
+      "latest": "2.4",
+      "previous": "2.15",
+      "period": "2026-06",
+      "unit": "%",
+      "nextRelease": "2026/06/25"
+    },
+    {
+      "url": "/finland/interest-rate",
+      "country": "Финляндия",
+      "iso": "FIN",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/france/interest-rate",
+      "country": "Франция",
+      "iso": "FRA",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/germany/interest-rate",
+      "country": "Германия",
+      "iso": "DEU",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/greece/interest-rate",
+      "country": "Греция",
+      "iso": "GRC",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/ireland/interest-rate",
+      "country": "Ирландия",
+      "iso": "IRL",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/italy/interest-rate",
+      "country": "Италия",
+      "iso": "ITA",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/latvia/interest-rate",
+      "country": "Латвия",
+      "iso": "LVA",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/lithuania/interest-rate",
+      "country": "Литва",
+      "iso": "LTU",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/luxembourg/interest-rate",
+      "country": "Люксембург",
+      "iso": "LUX",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/malta/interest-rate",
+      "country": "Мальта",
+      "iso": "MLT",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/netherlands/interest-rate",
+      "country": "Нидерланды",
+      "iso": "NLD",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/portugal/interest-rate",
+      "country": "Португалия",
+      "iso": "PRT",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/slovakia/interest-rate",
+      "country": "Словакия",
+      "iso": "SVK",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/slovenia/interest-rate",
+      "country": "Словения",
+      "iso": "SVN",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/spain/interest-rate",
+      "country": "Испания",
+      "iso": "ESP",
+      "latest": "2.4",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/belize/interest-rate",
+      "country": "Белиз",
+      "iso": "BLZ",
+      "latest": "2.25",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/canada/interest-rate",
+      "country": "Канада",
+      "iso": "CAN",
+      "latest": "2.25",
+      "previous": "2.25",
+      "period": "2026-06",
+      "unit": "%",
+      "nextRelease": "2026/06/24"
+    },
+    {
+      "url": "/cuba/interest-rate",
+      "country": "Куба",
+      "iso": "CUB",
+      "latest": "2.25",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/morocco/interest-rate",
+      "country": "Марокко",
+      "iso": "MAR",
+      "latest": "2.25",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/new-zealand/interest-rate",
+      "country": "Новая Зеландия",
+      "iso": "NZL",
+      "latest": "2.25",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/barbados/interest-rate",
+      "country": "Барбадос",
+      "iso": "BRB",
+      "latest": "2",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/taiwan/interest-rate",
+      "country": "Тайвань",
+      "iso": "TWN",
+      "latest": "2",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/denmark/interest-rate",
+      "country": "Дания",
+      "iso": "DNK",
+      "latest": "1.85",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/seychelles/interest-rate",
+      "country": "Сейшельские острова",
+      "iso": "SYC",
+      "latest": "1.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/sweden/interest-rate",
+      "country": "Швеция",
+      "iso": "SWE",
+      "latest": "1.75",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/singapore/interest-rate",
+      "country": "Сингапур",
+      "iso": "SGP",
+      "latest": "1.03",
+      "previous": "0.93",
+      "period": "2026-06",
+      "unit": "%",
+      "nextRelease": "2026/07/31"
+    },
+    {
+      "url": "/japan/interest-rate",
+      "country": "Япония",
+      "iso": "JPN",
+      "latest": "1",
+      "previous": "0.75",
+      "period": "2026-06",
+      "unit": "%",
+      "nextRelease": "2026/06/23"
+    },
+    {
+      "url": "/thailand/interest-rate",
+      "country": "Таиланд",
+      "iso": "THA",
+      "latest": "1",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/cambodia/interest-rate",
+      "country": "Камбоджа",
+      "iso": "KHM",
+      "latest": "0.46",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/fiji/interest-rate",
+      "country": "Фиджи",
+      "iso": "FJI",
+      "latest": "0.25",
+      "previous": "",
+      "period": "",
+      "unit": "%",
+      "nextRelease": ""
+    },
+    {
+      "url": "/switzerland/interest-rate",
+      "country": "Швейцария",
+      "iso": "CHE",
+      "latest": "0",
+      "previous": "0",
+      "period": "2026-06",
+      "unit": "%",
+      "nextRelease": "2026/06/24"
+    }
+  ]
+}

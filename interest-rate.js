@@ -3,12 +3,13 @@ const CACHE_TIME_KEY = "interestRateFetchedAt";
 const CACHE_TTL_MS = 60 * 60 * 1000;
 const STATIC_DATA_URL = "data/interest-rates.json";
 const TE_BASE_URL = "https://ru.tradingeconomics.com";
+const EDGE_TIMEOUT_MS = 8000;
+const STATIC_TIMEOUT_MS = 5000;
 
 const rateTableBody = document.getElementById("rateTableBody");
 const rateStatusEl = document.getElementById("rateStatus");
 const rateRefreshBtn = document.getElementById("rateRefreshBtn");
 const rateSearchInput = document.getElementById("rateSearch");
-const rateTableEl = document.getElementById("rateTable");
 const rateSortBtns = document.querySelectorAll("[data-rate-sort]");
 
 let ratePayload = null;
@@ -78,6 +79,15 @@ function writeCache(payload) {
 function parseRateValue(value) {
   const num = Number(String(value).replace(",", "."));
   return Number.isFinite(num) ? num : null;
+}
+
+function withTimeout(promise, ms, errorMessage) {
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => {
+      setTimeout(() => reject(new Error(errorMessage)), ms);
+    }),
+  ]);
 }
 
 function formatRateValue(value) {
@@ -221,7 +231,11 @@ function renderRateMeta() {
 
 async function fetchFromEdgeFunction() {
   const client = getRateClient();
-  const { data, error } = await client.functions.invoke("interest-rate-refresh");
+  const { data, error } = await withTimeout(
+    client.functions.invoke("interest-rate-refresh"),
+    EDGE_TIMEOUT_MS,
+    "Таймаут загрузки Edge Function"
+  );
 
   if (error) {
     throw new Error(error.message || "Edge Function interest-rate-refresh failed");
@@ -239,7 +253,11 @@ async function fetchFromEdgeFunction() {
 }
 
 async function fetchFromStaticFile() {
-  const response = await fetch(STATIC_DATA_URL, { cache: "no-store" });
+  const response = await withTimeout(
+    fetch(STATIC_DATA_URL, { cache: "no-store" }),
+    STATIC_TIMEOUT_MS,
+    `Таймаут загрузки ${STATIC_DATA_URL}`
+  );
 
   if (!response.ok) {
     throw new Error(`Не удалось загрузить ${STATIC_DATA_URL}`);
